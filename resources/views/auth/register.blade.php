@@ -55,36 +55,10 @@
                     </span>
                     @enderror
                 </div>
-
-                <div class="form-group form-group-feedback form-group-feedback-left">
-                    <input type="text" class="form-control @error('phone') border-danger @enderror" placeholder="Phone"
-                        name="phone">
-                    <div class="form-control-feedback">
-                        <i class="icon-phone2 text-muted"></i>
-                    </div>
-                    @error('phone')
-                    <span class="form-text text-danger" role="alert">
-                        {{ $message }}
-                    </span>
-                    @enderror
-                </div>
-
-                <div class="form-group form-group-feedback form-group-feedback-left">
-                    <input type="text" class="form-control @error('address') border-danger @enderror"
-                        placeholder="Address" name="address">
-                    <div class="form-control-feedback">
-                        <i class="icon-home text-muted"></i>
-                    </div>
-                    @error('address')
-                    <span class="form-text text-danger" role="alert">
-                        {{ $message }}
-                    </span>
-                    @enderror
-                </div>
-
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Submit<i
-                            class="icon-circle-right2 ml-2"></i></button>
+                    <button type="submit" class="btn btn-primary btn-block">Submit
+                        <i class="icon-circle-right2 ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Customer;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CustomerUpdateRequest extends FormRequest
+class CustomerRegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,10 @@ class CustomerUpdateRequest extends FormRequest
         return [
             'name'                  => 'required',
             'phone'                 => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
-            'email'                 => 'required|email|unique:ms_customers,id,' . $this->id . ',email',
+            'email'                 => 'required|email|unique:users,email',
             'address'               => 'required',
-            'password'              => 'required_with:password_confirmation|string|confirmed',
-            'password_confirmation' => 'required|same:password'
+            'password'              => 'required|string',
+            'password_confirmation' => 'required|same:password',
         ];
     }
 }

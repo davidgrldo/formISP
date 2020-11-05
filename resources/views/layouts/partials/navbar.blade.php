@@ -120,11 +120,12 @@
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
                     <img src="../../../../global_assets/images/demo/users/face11.jpg" class="rounded-circle mr-2"
                         height="34" alt="">
-                    <span>{{ Auth::user()->name }}</span>
+                    <span>{{ auth('customer')->check() ? auth('customer')->user()->name : Auth::user()->name }}</span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="{{ route('logout') }}" class="dropdown-item"><i class="icon-switch2"></i>
+                    <a href="{{ auth('customer')->check() ? route('customer.logout') : route('logout') }}"
+                        class="dropdown-item"><i class="icon-switch2"></i>
                         Logout</a>
                 </div>
             </li>

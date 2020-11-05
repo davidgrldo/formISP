@@ -98,7 +98,6 @@ class UserController extends Controller
             $data->update([
                 'name' => $request->name,
                 'email' => $request->email,
-                'updated_by' => Auth::user()->id
             ]);
 
             if (!empty($request->password)) {

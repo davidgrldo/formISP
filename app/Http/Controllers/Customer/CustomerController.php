@@ -45,7 +45,7 @@ class CustomerController extends Controller
             DB::beginTransaction();
 
             MsCustomer::create([
-                'full_name' => $request->full_name,
+                'name' => $request->name,
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'address' => $request->address,
@@ -69,8 +69,8 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $data = MsCustomer::findOrFail($id);
-        return view('pages.customer.create_edit', compact('data'));
+        // $data = MsCustomer::findOrFail($id);
+        // return view('pages.customer.create_edit', compact('data'));
     }
 
     /**
@@ -81,7 +81,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = MsCustomer::findOrFail($id);
+        return view('pages.customer.create_edit', compact('data'));
     }
 
     /**
@@ -98,7 +99,7 @@ class CustomerController extends Controller
             $data = MsCustomer::findOrFail($id);
 
             $data->update([
-                'full_name' => $request->full_name,
+                'name' => $request->name,
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'address' => $request->address,
@@ -161,12 +162,12 @@ class CustomerController extends Controller
      * */
     public function data(Request $request)
     {
-        $data = MsCustomer::withTrashed();
+        $data = MsCustomer::all();
 
         return DataTables::of($data)
             ->addIndexColumn()
-            ->editColumn('full_name', function ($item) {
-                return '<a href="' . route('user.edit', $item->id) . '">' . $item->full_name . '</a>';
+            ->editColumn('name', function ($item) {
+                return '<a href="' . route('customer.edit', $item->id) . '">' . $item->name . '</a>';
             })
             ->editColumn('deleted_at', function ($item) {
                 $green = "<span style='color: green'><i class='icon-checkmark'></i></span>";

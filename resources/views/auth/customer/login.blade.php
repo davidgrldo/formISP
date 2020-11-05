@@ -2,11 +2,13 @@
 @section('section')
 <!-- Content area -->
 <div class="content d-flex justify-content-center align-items-center">
-
     <!-- Login form -->
     <form class="login-form" method="POST" action="{{ route('customer.login') }}">
         @csrf
 
+        @if(\Session::has('error'))
+        <div class="alert alert-danger">Email atau password salah</div>
+        @endif
         <div class="card mb-0">
             <div class="card-body">
                 <div class="text-center mb-3">
@@ -43,12 +45,9 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Sign in <i
-                            class="icon-circle-right2 ml-2"></i></button>
-                </div>
-
-                <div class="text-center">
-                    <a href="login_password_recover.html">Forgot password?</a>
+                    <button type="submit" class="btn btn-primary btn-block">Sign in
+                        <i class="icon-circle-right2 ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>

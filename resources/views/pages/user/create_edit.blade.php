@@ -97,12 +97,12 @@
                 }
                 if(response.status == 422){
                     var error = response.responseJSON.errors;
-                    
+
                 }
                 btn.html('Submit').prop('disabled',false);
             }
         });
-    }    
+    }
 });
 </script>
 @endpush

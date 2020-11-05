@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MsCustomer;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class CustomerDashboard extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -15,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:customer');
     }
 
     /**
@@ -25,8 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $customer = MsCustomer::count();
-        $user = User::count();
-        return view('home', compact('customer','user'));
+        return view('home');
     }
 }

@@ -46,7 +46,6 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Created At</th>
                     <th class="text-center">Active</th>
                 </tr>
             </thead>
@@ -81,7 +80,6 @@
                 { data: 'id', name: 'id', width: '30px' , class: "text-center", searchable: false },
                 { data: 'name', name: 'name' },
                 { data: 'email', name: 'email' },
-                { data: 'created_at', name: 'created_at' },
                 { data: 'deleted_at', name: 'deleted_at', width: '30px', class: 'text-center', searchable: false },
             ]
         });

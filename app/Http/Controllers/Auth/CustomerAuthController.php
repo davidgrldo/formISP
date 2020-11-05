@@ -4,29 +4,46 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Customer\CustomerRegisterRequest;
+use App\Http\Requests\Customer\CustomerLoginRequest;
 use App\Models\MsCustomer;
+use Auth;
+
 
 class CustomerAuthController extends Controller
 {
-    public function login(Request $request)
+    public function login(CustomerLoginRequest $request)
     {
         $data = MsCustomer::where('email', $request->email)->first();
-        if (Auth::guard('customer')->attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::guard('customer')->attempt([
+            'email' => $request->email,
+            'password' => $request->password
+            ])
+        ) {
             return redirect('pages/dashboard');
         } else {
-            return response()->json(['message' => 'Login Gagal'], 302);
+            return redirect('pages/login')->with(["error" => 'Error']);
         }
     }
 
-    public function logout()
+    public function register(CustomerRegisterRequest $data)
     {
-        Auth::guard('pages')->logout();
-        return redirect("/pages/login");
+        MsCustomer::create([
+            'name' => $data['name'],
+            'phone' => $data['phone'],
+            'email' => $data['email'],
+            'address' => $data['address'],
+            'company_name' => $data['company_name'],
+            'password' => Hash::make($data['password']),
+        ]);
+        return redirect('/pages/login');
     }
 
-    public function register()
+
+    public function logout(Request $request)
     {
-        return view('auth.customer.register');
+       Auth::guard('customer')->logout();
+        return redirect('/pages/login');
     }
 }

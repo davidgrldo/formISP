@@ -5,7 +5,7 @@
 <div class="content d-flex justify-content-center align-items-center">
 
     <!-- Login form -->
-    <form class="login-form" method="POST" action="{{ route('register') }}">
+    <form class="login-form" method="POST" action="{{ route('customer.register') }}">
         @csrf
 
         <div class="card mb-0">
@@ -85,6 +85,19 @@
                 <div class="form-group form-group-feedback form-group-feedback-left">
                     <input type="password" class="form-control @error('password') border-danger @enderror"
                         placeholder="Password" name="password">
+                    <div class="form-control-feedback">
+                        <i class="icon-lock2 text-muted"></i>
+                    </div>
+                    @error('password')
+                    <span class="form-text text-danger" role="alert">
+                        {{ $message }}
+                    </span>
+                    @enderror
+                </div>
+
+                <div class="form-group form-group-feedback form-group-feedback-left">
+                    <input type="password" class="form-control @error('password_confirmation') border-danger @enderror"
+                        placeholder="Password Confirmation" name="password_confirmation">
                     <div class="form-control-feedback">
                         <i class="icon-lock2 text-muted"></i>
                     </div>

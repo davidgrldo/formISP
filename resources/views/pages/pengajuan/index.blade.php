@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Customers')
+@section('title', 'Pengajuan')
 @section('scripts')
 <script type="text/javascript" src="/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
 <script type="text/javascript" src="/global_assets/js/plugins/tables/datatables/extensions/select.min.js"></script>
@@ -10,19 +10,19 @@
 @section('content')
 @component('layouts.component.header')
 @slot('tools')
-<a href="{{route('customer.create')}}" class="btn btn-md btn-primary">
+<a href="{{route('pengajuan.create')}}" class="btn btn-md btn-primary">
     <i class="icon-plus-circle2 mr-2"></i>
-    <span>@lang('lang.add_user')</span>
+    <span>Tambah Pengajuan</span>
 </a>
 @endslot
 @slot('breadcumbs')
-<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pages / Customers</h4>
+<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pages / Pengajuan</h4>
 <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 @endslot
 @slot('breadcumbs2')
 <a href="{{url('/pages/dashboard')}}" class="breadcrumb-item">Home</a>
-<a href="{{route('customer.index')}}" class="breadcrumb-item">Pages</a>
-<span class="breadcrumb-item active">Customers</span>
+<a href="{{route('pengajuan.index')}}" class="breadcrumb-item">Pages</a>
+<span class="breadcrumb-item active">Pengajuan</span>
 @endslot
 @endcomponent
 <div class="content">
@@ -39,16 +39,21 @@
         </div>
 
         <table class="table table-hover table-bordered table-xxs datatable-select-checkbox" id="data-table"
-            data-url="{{route('customer.index')}}">
+            data-url="{{route('pengajuan.index')}}">
             <thead>
                 <tr>
                     <th><input type="checkbox" class="styled" id="select-all"></th>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
+                    <th>No. KTP</th>
+                    <th>Image KTP</th>
+                    <th>No. NPWP</th>
+                    <th>Image NPWP</th>
                     <th>Address</th>
-                    <th>Company Name</th>
+                    <th>Brand Name</th>
+                    <th>Status</th>
+                    <th>Token</th>
+                    <th>Type</th>
                     <th class="text-center">Active</th>
                 </tr>
             </thead>
@@ -64,7 +69,7 @@
             serverSide: true,
             order: [1 , 'desc'],
             ajax: {
-            url: '{{route('customer.data')}}',
+            url: '{{route('pengajuan.data')}}',
             data: function (d) {
                 d.datefrom = $('input[name=datefrom]').val();
             },
@@ -82,10 +87,16 @@
                 { data: 'id', name: 'id', width: '50px', orderable: false, render: function() { return ''} },
                 { data: 'id', name: 'id', width: '30px' , class: "text-center", searchable: false },
                 { data: 'name', name: 'name' },
-                { data: 'phone', name: 'phone' },
-                { data: 'email', name: 'email' },
+                { data: 'no_ktp', name: 'no_ktp' },
+                { data: 'image_ktp', name: 'image_ktp' },
+                { data: 'no_npwp', name: 'no_npwp' },
+                { data: 'image_npwp', name: 'image_npwp' },
                 { data: 'address', name: 'address' },
-                { data: 'company_name', name: 'company_name' },
+                { data: 'brand_name', name: 'brand_name' },
+                { data: 'brand_name', name: 'brand_name' },
+                { data: 'status', name: 'status' },
+                { data: 'token', name: 'token' },
+                { data: 'type', name: 'type' },
                 { data: 'deleted_at', name: 'deleted_at', width: '30px', class: 'text-center', searchable: false },
             ]
         });

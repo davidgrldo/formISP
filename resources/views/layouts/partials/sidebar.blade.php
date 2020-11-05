@@ -21,6 +21,7 @@
         <!-- Main navigation -->
         <div class="card card-sidebar-mobile">
             <ul class="nav nav-sidebar" data-nav-type="accordion">
+                @if(auth('web')->check())
                 <li class="nav-item">
                     <a href="{{ route('dashboard') }}"
                         class="nav-link {{ request()->segment(2) == 'home' ? 'active' : '' }}">
@@ -34,20 +35,26 @@
                     class="nav-item nav-item-submenu {{ in_array(request()->segment(2), ['user'])  ? 'nav-item-open nav-item-expanded' : '' }}">
                     <a href="#" class="nav-link"><i class="icon-users"></i> <span>User Management</span></a>
 
-                    @if(Auth::guard('web')->check())
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                         <li class="nav-item"><a href="{{ route('user.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'user' ? 'active' : '' }}">User</a>
                         </li>
-                    </ul>
-                    @else
-                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                         <li class="nav-item"><a href="{{ route('customer.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'customer' ? 'active' : '' }}">Customer</a>
                         </li>
                     </ul>
-                    @endif
                 </li>
+                @elseif(auth('customer')->check())
+                <li class="nav-item">
+                    <a href="{{ route('pengajuan.index') }}"
+                        class="nav-link {{ request()->segment(2) == 'pengajuan' ? 'active' : '' }}">
+                        <i class="icon-profile"></i>
+                        <span>
+                            Pengajuan
+                        </span>
+                    </a>
+                </li>
+                @endif
                 <!-- /main -->
             </ul>
         </div>

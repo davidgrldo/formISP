@@ -25,9 +25,10 @@ class CustomerRequest extends FormRequest
     {
         return [
             'name'                  => 'required',
-            'phone'                 => 'required|regex:/(01)[0-9]{9}/',
-            'email'                 => 'required|email|unique:users,email',
-            'address'              => 'required',
+            'phone'                 => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
+            'email'                 => 'required|email|unique:ms_customers,email',
+            'address'               => 'required',
+            'password'              => 'required_with:password_confirmation|string|confirmed',
             'password_confirmation' => 'required|same:password'
         ];
     }
