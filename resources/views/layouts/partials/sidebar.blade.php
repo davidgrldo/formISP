@@ -21,12 +21,6 @@
         <!-- Main navigation -->
         <div class="card card-sidebar-mobile">
             <ul class="nav nav-sidebar" data-nav-type="accordion">
-
-                <!-- Main -->
-                {{-- <li class="nav-item-header">
-                    <div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu"
-                        title="Main"></i>
-                </li> --}}
                 <li class="nav-item">
                     <a href="{{ route('dashboard') }}"
                         class="nav-link {{ request()->segment(2) == 'home' ? 'active' : '' }}">
@@ -40,18 +34,21 @@
                     class="nav-item nav-item-submenu {{ in_array(request()->segment(2), ['user'])  ? 'nav-item-open nav-item-expanded' : '' }}">
                     <a href="#" class="nav-link"><i class="icon-users"></i> <span>User Management</span></a>
 
+                    @if(Auth::guard('web')->check())
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                         <li class="nav-item"><a href="{{ route('user.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'user' ? 'active' : '' }}">User</a>
                         </li>
                     </ul>
-                    {{-- <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                        <li class="nav-item"><a href="{{ route('user.index') }}"
-                    class="nav-link {{ request()->segment(2) == 'user' ? 'active' : '' }}">Customer</a>
+                    @else
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                        <li class="nav-item"><a href="{{ route('customer.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'customer' ? 'active' : '' }}">Customer</a>
+                        </li>
+                    </ul>
+                    @endif
                 </li>
-            </ul> --}}
-            </li>
-            <!-- /main -->
+                <!-- /main -->
             </ul>
         </div>
         <!-- /main navigation -->

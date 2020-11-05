@@ -12,17 +12,20 @@
 */
 
 Route::get('/', function () {
-    return redirect('/backend/login');
+    return redirect('/pages/login');
 });
 
-Route::group(['prefix' => 'customer'], function () {
-    Auth::routes();
-    Route::get('/', function () {
-        return redirect('/customer/login');
+Route::group(['prefix' => 'pages'], function () {
+    Route::get('/login', function () {
+        return view('auth.customer.login');
     });
-    Route::group(['middleware' => 'auth'], function () {
-        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+    Route::get('/register', function () {
+        return view('auth.customer.register');
+    });
 
+    Route::post("/login-process", "Auth\CustomerAuthController@login")->name("customer.login");
+    Route::group(['middleware' => 'auth:customer'], function () {
+        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
         /**
          * Customer Page
          **/
@@ -39,6 +42,7 @@ Route::group(['prefix' => 'backend'], function () {
     Route::get('/', function () {
         return redirect('/backend/login');
     });
+
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 

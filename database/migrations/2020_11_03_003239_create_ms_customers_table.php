@@ -15,7 +15,7 @@ class CreateMsCustomersTable extends Migration
     {
         Schema::create('ms_customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('full_name');
+            $table->string('name');
             $table->string('phone');
             $table->string('email');
             $table->string('address');

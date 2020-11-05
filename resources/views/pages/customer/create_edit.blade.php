@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'User Form')
+@section('title', 'Customer Form')
 
 @section('content')
 @component('layouts.component.header')
@@ -7,14 +7,14 @@
 
 @endslot
 @slot('breadcumbs')
-<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / User /
-    {{isset($data) ? 'Edit User' : 'Create User'}}</h4>
+<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Customer /
+    {{isset($data) ? 'Edit Customer' : 'Create Customer'}}</h4>
 <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 @endslot
 @slot('breadcumbs2')
-<a href="{{url('/backend/home')}}" class="breadcrumb-item"> Home</a>
-<a href="{{route('user.index')}}" class="breadcrumb-item">User</a>
-<span class="breadcrumb-item active">{{isset($data) ? 'Edit User' : 'Create User'}}</span>
+<a href="{{url('/pages/dashboard')}}" class="breadcrumb-item"> Home</a>
+<a href="{{route('customer.index')}}" class="breadcrumb-item">Customer</a>
+<span class="breadcrumb-item active">{{isset($data) ? 'Edit Customer' : 'Create Customer'}}</span>
 @endslot
 @endcomponent
 <!-- Main content -->
@@ -23,10 +23,10 @@
         <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-header header-elements-inline">
-                    <h5 class="card-title">{{isset($data) ? 'Edit Admin' : 'Add Admin'}}</h5>
+                    <h5 class="card-title">{{isset($data) ? 'Edit Customer' : 'Add Customer'}}</h5>
                 </div>
                 <div class="card-body">
-                    <form id="form-user" enctype="multipart/form-data">
+                    <form id="form-customer" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="">Name</label>
@@ -51,7 +51,7 @@
                 <div class="card-footer">
                     <div class="text-right">
                         <button type="button" id="save" class="btn btn-md btn-primary pull-right">Submit</button>
-                        <a href="{{route('user.index')}}" class="btn btn-md btn-danger">Back</a>
+                        <a href="{{route('customer.index')}}" class="btn btn-md btn-danger">Back</a>
                     </div>
                 </div>
             </div>
@@ -62,19 +62,19 @@
 @push('javascript')
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 @if(isset($data))
-{!! JsValidator::formRequest('App\Http\Requests\User\UserUpdateRequest') !!}
+{!! JsValidator::formRequest('App\Http\Requests\Customer\CustomerUpdateRequest') !!}
 @else
-{!! JsValidator::formRequest('App\Http\Requests\User\UserRequest') !!}
+{!! JsValidator::formRequest('App\Http\Requests\Customer\CustomerRequest') !!}
 @endif
 <script>
     $('#save').on("click",function(){
     let btn = $(this);
-    let form = $('#form-user');
+    let form = $('#form-customer');
     if(form.valid()) {
         $.ajax({
-            url: "{{isset($data) ? route('user.update',$data->id) : route('user.store')}}",
+            url: "{{isset($data) ? route('customer.update',$data->id) : route('customer.store')}}",
             method: "{{isset($data) ? 'PATCH' : 'POST'}}",
-            data: $('#form-user').serialize(),
+            data: $('#form-customer').serialize(),
             dataType: 'JSON',
             beforeSend: function(){
                 btn.html('Please wait').prop('disabled',true);
@@ -87,7 +87,7 @@
                     buttonStyling: false,
                     confirmButtonClass: 'btn btn-primary btn-lg',
                 }).then(function() {
-                    window.location.href = "{{route('user.index')}}";
+                    window.location.href = "{{route('customer.index')}}";
                 })
             },
             error: function(response){
@@ -97,12 +97,12 @@
                 }
                 if(response.status == 422){
                     var error = response.responseJSON.errors;
-                    
+
                 }
                 btn.html('Submit').prop('disabled',false);
             }
         });
-    }    
+    }
 });
 </script>
 @endpush

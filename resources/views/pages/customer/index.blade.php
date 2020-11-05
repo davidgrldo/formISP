@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'User')
+@section('title', 'Customers')
 @section('scripts')
 <script type="text/javascript" src="/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
 <script type="text/javascript" src="/global_assets/js/plugins/tables/datatables/extensions/select.min.js"></script>
@@ -10,19 +10,19 @@
 @section('content')
 @component('layouts.component.header')
 @slot('tools')
-<a href="{{route('user.create')}}" class="btn btn-md btn-primary">
+<a href="{{route('customer.create')}}" class="btn btn-md btn-primary">
     <i class="icon-plus-circle2 mr-2"></i>
     <span>@lang('lang.add_user')</span>
 </a>
 @endslot
 @slot('breadcumbs')
-<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / User / Users</h4>
+<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pages / Customers</h4>
 <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 @endslot
 @slot('breadcumbs2')
-<a href="{{url('/backend/home')}}" class="breadcrumb-item">Home</a>
-<a href="{{route('user.index')}}" class="breadcrumb-item">User</a>
-<span class="breadcrumb-item active">users</span>
+<a href="{{url('/pages/dashboard')}}" class="breadcrumb-item">Home</a>
+<a href="{{route('customer.index')}}" class="breadcrumb-item">Pages</a>
+<span class="breadcrumb-item active">Customers</span>
 @endslot
 @endcomponent
 <div class="content">
@@ -39,14 +39,16 @@
         </div>
 
         <table class="table table-hover table-bordered table-xxs datatable-select-checkbox" id="data-table"
-            data-url="{{route('user.index')}}">
+            data-url="{{route('customer.index')}}">
             <thead>
                 <tr>
                     <th><input type="checkbox" class="styled" id="select-all"></th>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Phone</th>
                     <th>Email</th>
-                    <th>Created At</th>
+                    <th>Address</th>
+                    <th>Company Name</th>
                     <th class="text-center">Active</th>
                 </tr>
             </thead>
@@ -62,7 +64,7 @@
             serverSide: true,
             order: [1 , 'desc'],
             ajax: {
-            url: '{{route('user.data')}}',
+            url: '{{route('customer.data')}}',
             data: function (d) {
                 d.datefrom = $('input[name=datefrom]').val();
             },

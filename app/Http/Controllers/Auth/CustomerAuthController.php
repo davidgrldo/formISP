@@ -11,13 +11,9 @@ class CustomerAuthController extends Controller
 {
     public function login(Request $request)
     {
-        $data = MsCustomer::where('id', $request->id)->first();
-        if (!$data) {
-            return response()->json(['message' => 'Anda belum memiliki akun'], 302);
-        }
-
-        if (Auth::guard('customer')->attempt(['id' => $request->id, 'password' => $request->password])) {
-            return response()->json(['message' => 'Login Berhasil'], 200);
+        $data = MsCustomer::where('email', $request->email)->first();
+        if (Auth::guard('customer')->attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect('pages/dashboard');
         } else {
             return response()->json(['message' => 'Login Gagal'], 302);
         }
@@ -25,7 +21,12 @@ class CustomerAuthController extends Controller
 
     public function logout()
     {
-        Auth::guard('customer')->logout();
-        return redirect("/customer/login");
+        Auth::guard('pages')->logout();
+        return redirect("/pages/login");
+    }
+
+    public function register()
+    {
+        return view('auth.customer.register');
     }
 }
