@@ -80,7 +80,7 @@
 
                     </div>
                     <div class="d-flex justify-content-end mt-4">
-                        {!! QrCode::generate(route('customer.status', $item->token)) !!}
+                        <img src="data:image/png;base64, {!! base64_encode(QrCode::errorCorrection('H')->format('png')->merge('/public/images/logo1.png', .3)->size(150)->generate(url('/status/'.$item->token))) !!} ">
                     </div>
                 </div>
             </div>
