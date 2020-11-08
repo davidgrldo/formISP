@@ -36,3 +36,17 @@ if (!function_exists('num_uf')) {
     return str_replace('.', '', $number);
   }
 }
+
+if (!function_exists('generate_invoice')) {
+  function generate_invoice($length = 10)
+  {
+    // $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $characters = '123456789';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+      $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+  }
+}

@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-
+        {{-- <div class="table-responsive"> --}}
         <table class="table table-hover table-bordered table-xxs datatable-select-checkbox" id="data-table"
             data-url="{{route('pengajuan.index')}}">
             <thead>
@@ -46,18 +46,16 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>No. KTP</th>
-                    <th>Image KTP</th>
                     <th>No. NPWP</th>
-                    <th>Image NPWP</th>
                     <th>Address</th>
                     <th>Brand Name</th>
-                    <th>Status</th>
-                    <th>Token</th>
                     <th>Type</th>
-                    <th class="text-center">Active</th>
+                    <th>Status</th>
+                    {{-- <th class="text-center">Active</th> --}}
                 </tr>
             </thead>
         </table>
+        {{-- </div> --}}
     </div>
 </div>
 @endsection
@@ -67,6 +65,7 @@
     var table = $('#data-table').DataTable({
             processing: true,
             serverSide: true,
+            scrollX: true,
             order: [1 , 'desc'],
             ajax: {
             url: '{{route('pengajuan.data')}}',
@@ -88,16 +87,12 @@
                 { data: 'id', name: 'id', width: '30px' , class: "text-center", searchable: false },
                 { data: 'name', name: 'name' },
                 { data: 'no_ktp', name: 'no_ktp' },
-                { data: 'image_ktp', name: 'image_ktp' },
                 { data: 'no_npwp', name: 'no_npwp' },
-                { data: 'image_npwp', name: 'image_npwp' },
                 { data: 'address', name: 'address' },
                 { data: 'brand_name', name: 'brand_name' },
-                { data: 'brand_name', name: 'brand_name' },
-                { data: 'status', name: 'status' },
-                { data: 'token', name: 'token' },
                 { data: 'type', name: 'type' },
-                { data: 'deleted_at', name: 'deleted_at', width: '30px', class: 'text-center', searchable: false },
+                { data: 'status', name: 'status' },
+                // { data: 'deleted_at', name: 'deleted_at', width: '30px', class: 'text-center', searchable: false },
             ]
         });
 </script>

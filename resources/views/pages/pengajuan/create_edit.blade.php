@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Customer Form')
+@section('title', 'Form Pengajuan')
 
 @section('content')
 @component('layouts.component.header')
@@ -7,14 +7,14 @@
 
 @endslot
 @slot('breadcumbs')
-<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Customer /
-    {{isset($data) ? 'Edit Customer' : 'Create Customer'}}</h4>
+<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pengajuan /
+    {{isset($data) ? 'Edit Pengajuan' : 'Tambah Pengajuan'}}</h4>
 <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 @endslot
 @slot('breadcumbs2')
 <a href="{{url('/pages/dashboard')}}" class="breadcrumb-item"> Home</a>
-<a href="{{route('customer.index')}}" class="breadcrumb-item">Customer</a>
-<span class="breadcrumb-item active">{{isset($data) ? 'Edit Customer' : 'Create Customer'}}</span>
+<a href="{{route('pengajuan.index')}}" class="breadcrumb-item">Pengajuan</a>
+<span class="breadcrumb-item active">{{isset($data) ? 'Edit Pengajuan' : 'Tambah Pengajuan'}}</span>
 @endslot
 @endcomponent
 <!-- Main content -->
@@ -23,10 +23,10 @@
         <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-header header-elements-inline">
-                    <h5 class="card-title">{{isset($data) ? 'Edit Customer' : 'Add Customer'}}</h5>
+                    <h5 class="card-title">{{isset($data) ? 'Edit Pengajuan' : 'Tambah Pengajuan'}}</h5>
                 </div>
                 <div class="card-body">
-                    <form id="form-customer" enctype="multipart/form-data">
+                    <form id="form-pengajuan" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="">Name</label>
@@ -34,14 +34,24 @@
                                 value="{{isset($data) ? $data->name : null}}">
                         </div>
                         <div class="form-group">
-                            <label for="">Phone</label>
-                            <input type="phone" name="phone" class="form-control" id=""
-                                value="{{isset($data) ? $data->phone : null}}">
+                            <label for="">No. KTP</label>
+                            <input type="no_ktp" name="no_ktp" class="form-control" id=""
+                                value="{{isset($data) ? $data->no_ktp : null}}">
                         </div>
                         <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="email" name="email" class="form-control" id=""
-                                value="{{isset($data) ? $data->email : null}}">
+                            <label for="">Foto KTP</label>
+                            <input type="file" name="image_ktp" class="form-control" id=""
+                                value="{{isset($data) ? $data->image_ktp : null}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">No. NPWP</label>
+                            <input type="no_npwp" name="no_npwp" class="form-control" id=""
+                                value="{{isset($data) ? $data->no_npwp : null}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Foto NPWP</label>
+                            <input type="file" name="image_npwp" class="form-control" id=""
+                                value="{{isset($data) ? $data->image_npwp : null}}">
                         </div>
                         <div class="form-group">
                             <label for="">Address</label>
@@ -49,24 +59,20 @@
                                 value="{{isset($data) ? $data->address : null}}">
                         </div>
                         <div class="form-group">
-                            <label for="">Company Name</label>
-                            <input type="company_name" name="company_name" class="form-control" id=""
-                                value="{{isset($data) ? $data->company_name : null}}">
+                            <label for="">Nama Brand</label>
+                            <input type="brand_name" name="brand_name" class="form-control" id=""
+                                value="{{isset($data) ? $data->brand_name : null}}">
                         </div>
                         <div class="form-group">
-                            <label for="">Password</label>
-                            <input type="password" name="password" class="form-control" id="" value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="">Confirm Password</label>
-                            <input type="password" name="password_confirmation" class="form-control" value="">
+                            <label for="">Tipe Pengajuan</label>
+                            {!! Form::select('type', $options['layanan'], null, ['class' => 'form-control']) !!}
                         </div>
                     </form>
                 </div>
                 <div class="card-footer">
                     <div class="text-right">
                         <button type="button" id="save" class="btn btn-md btn-primary pull-right">Submit</button>
-                        <a href="{{route('customer.index')}}" class="btn btn-md btn-danger">Back</a>
+                        <a href="{{route('pengajuan.index')}}" class="btn btn-md btn-danger">Back</a>
                     </div>
                 </div>
             </div>
@@ -77,46 +83,21 @@
 @push('javascript')
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 @if(isset($data))
-{!! JsValidator::formRequest('App\Http\Requests\Customer\CustomerUpdateRequest') !!}
+{!! JsValidator::formRequest('App\Http\Requests\Pengajuan\PengajuanUpdateRequest') !!}
 @else
-{!! JsValidator::formRequest('App\Http\Requests\Customer\CustomerRequest') !!}
+{!! JsValidator::formRequest('App\Http\Requests\Pengajuan\PengajuanRequest') !!}
 @endif
 <script>
     $('#save').on("click",function(){
     let btn = $(this);
-    let form = $('#form-customer');
+    let form = $('#form-pengajuan');
+    let url = "{{ route('pengajuan.store') }}"
+    let data = document.forms.namedItem('form-pengajuan');
+    let formData = new FormData(data);
+    let index =  "{{ route('pengajuan.index') }}"
+    let mode = "POST"
     if(form.valid()) {
-        $.ajax({
-            url: "{{isset($data) ? route('customer.update',$data->id) : route('customer.store')}}",
-            method: "{{isset($data) ? 'PATCH' : 'POST'}}",
-            data: $('#form-customer').serialize(),
-            dataType: 'JSON',
-            beforeSend: function(){
-                btn.html('Please wait').prop('disabled',true);
-            },
-            success: function(response){
-                swalInit.fire({
-                    title: "Success!",
-                    text: response.message,
-                    type: 'success',
-                    buttonStyling: false,
-                    confirmButtonClass: 'btn btn-primary btn-lg',
-                }).then(function() {
-                    window.location.href = "{{route('customer.index')}}";
-                })
-            },
-            error: function(response){
-                if(response.status == 500){
-                    console.log(response)
-                    swalInit.fire("Error", response.responseJSON.message,'error');
-                }
-                if(response.status == 422){
-                    var error = response.responseJSON.errors;
-
-                }
-                btn.html('Submit').prop('disabled',false);
-            }
-        });
+        createWithImage(url, formData, btn, index);
     }
 });
 </script>

@@ -15,6 +15,8 @@ Route::get('/', function () {
     return redirect('/pages/login');
 });
 
+Route::get('/status/{token}', 'Customer\StatusController@index')->name('customer.status');
+
 // Customer
 Route::group(['prefix' => 'pages'], function () {
     // Auth Process
@@ -38,9 +40,9 @@ Route::group(['prefix' => 'pages'], function () {
         /**
          * Pengajuan Page
          **/
-        Route::get('pengajuan/data', 'Pengajuan\PengajuanController@data')->name("pengajuan.data");
-        Route::post('pengajuan/restore/{id}', 'Pengajuan\PengajuanController@restore')->name('pengajuan.restore');
-        Route::delete('pengajuan/remove/{id}', 'Pengajuan\PengajuanController@remove')->name('pengajuan.delete');
+        Route::get('pengajuan/data', 'Customer\PengajuanController@data')->name("pengajuan.data");
+        Route::post('pengajuan/restore/{id}', 'Customer\PengajuanController@restore')->name('pengajuan.restore');
+        Route::delete('pengajuan/remove/{id}', 'Customer\PengajuanController@remove')->name('pengajuan.delete');
         Route::resource('pengajuan', 'Customer\PengajuanController');
     });
 });
