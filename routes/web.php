@@ -41,6 +41,7 @@ Route::group(['prefix' => 'pages'], function () {
          * Pengajuan Page
          **/
         Route::get('pengajuan/data', 'Customer\PengajuanController@data')->name("pengajuan.data");
+        Route::get('pengajuan/export/{token}', 'Customer\PengajuanController@exportWord')->name("pengajuan.export");
         Route::post('pengajuan/restore/{id}', 'Customer\PengajuanController@restore')->name('pengajuan.restore');
         Route::delete('pengajuan/remove/{id}', 'Customer\PengajuanController@remove')->name('pengajuan.delete');
         Route::resource('pengajuan', 'Customer\PengajuanController');
