@@ -16,7 +16,7 @@
 @endslot
 @endcomponent
 <!-- Main content -->
-<div class="container">
+<div class="content">
     <div class="row mt-3 d-flex align-items-center justify-content-center">
         <div class="col-md-6">
             <div class="card">
