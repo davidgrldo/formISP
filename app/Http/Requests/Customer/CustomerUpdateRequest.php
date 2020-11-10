@@ -24,12 +24,12 @@ class CustomerUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'                  => 'required',
             'phone'                 => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
             'email'                 => 'required|email|unique:ms_customers,id,' . $this->id . ',email',
             'address'               => 'required',
-            'password'              => 'required_with:password_confirmation|string|confirmed',
-            'password_confirmation' => 'required|same:password'
+            'company_name'          => 'required',
+            'role'                  => 'required|string',
+            'nationallity'          => 'required|string',
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserRequest;
 use App\Http\Requests\User\UserUpdateRequest;
+use App\Models\MsPengajuan;
 use Illuminate\Http\Request;
 use App\Models\User;
 use DB;
@@ -170,5 +171,19 @@ class UserController extends Controller
             })
             ->escapeColumns([])
             ->make(true);
+    }
+
+    public function setStatus(Request $request, $id)
+    {
+        $request->validate([
+            'status' => 'required|in:Pending, Disetuji, Tidak Disetujui'
+        ]);
+
+        $data = MsPengajuan::findOrFail($id);
+        $data->status = $request->status;
+
+        $data->save();
+
+        return redirect()->route('customer.index');
     }
 }

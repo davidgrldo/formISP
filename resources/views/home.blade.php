@@ -55,7 +55,7 @@
             <div class="card card-body bg-success-400 has-bg-image">
                 <div class="media">
                     <div class="media-body">
-                        <h3 class="mb-0">105</h3>
+                        <h3 class="mb-0">{{ $pengajuan }}</h3>
                         <span class="text-uppercase font-size-xs">Total Pengajuan</span>
                     </div>
 

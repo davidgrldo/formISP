@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MsCustomer;
 use App\Models\User;
+use App\Models\MsPengajuan;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +28,7 @@ class HomeController extends Controller
     {
         $customer = MsCustomer::count();
         $user = User::count();
-        return view('home', compact('customer','user'));
+        $pengajuan = MsPengajuan::count();
+        return view('home', compact('customer','user', 'pengajuan'));
     }
 }

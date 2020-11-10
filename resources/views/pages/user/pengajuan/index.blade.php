@@ -10,10 +10,7 @@
 @section('content')
 @component('layouts.component.header')
 @slot('tools')
-<a href="{{route('pengajuan.create')}}" class="btn btn-md btn-primary">
-    <i class="icon-plus-circle2 mr-2"></i>
-    <span>Tambah Pengajuan</span>
-</a>
+
 @endslot
 @slot('breadcumbs')
 <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pages / Pengajuan</h4>
@@ -44,13 +41,11 @@
                 <tr>
                     <th><input type="checkbox" class="styled" id="select-all"></th>
                     <th>ID</th>
-                    <th>No. KTP</th>
-                    <th>No. NPWP</th>
+                    <th>No. Pendaftaran</th>
                     <th>Address</th>
                     <th>Brand Name</th>
                     <th>Type</th>
                     <th>Status</th>
-                    {{-- <th class="text-center">Active</th> --}}
                 </tr>
             </thead>
         </table>
@@ -67,7 +62,7 @@
             scrollX: true,
             order: [1 , 'desc'],
             ajax: {
-            url: '{{route('pengajuan.data')}}',
+            url: '{{route('request.data')}}',
             data: function (d) {
                 d.datefrom = $('input[name=datefrom]').val();
             },
@@ -84,13 +79,11 @@
             columns: [
                 { data: 'id', name: 'id', width: '50px', orderable: false, render: function() { return ''} },
                 { data: 'id', name: 'id', width: '30px' , class: "text-center", searchable: false },
-                { data: 'no_ktp', name: 'no_ktp' },
-                { data: 'no_npwp', name: 'no_npwp' },
+                { data: 'no_pendaftaran', name: 'no_pendaftaran' },
                 { data: 'address', name: 'address' },
                 { data: 'brand_name', name: 'brand_name' },
                 { data: 'type', name: 'type' },
                 { data: 'status', name: 'status' },
-                // { data: 'deleted_at', name: 'deleted_at', width: '30px', class: 'text-center', searchable: false },
             ]
         });
 </script>

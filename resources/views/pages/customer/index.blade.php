@@ -49,6 +49,7 @@
                     <th>Email</th>
                     <th>Address</th>
                     <th>Company Name</th>
+                    <th>Role</th>
                     <th class="text-center">Active</th>
                 </tr>
             </thead>
@@ -86,6 +87,7 @@
                 { data: 'email', name: 'email' },
                 { data: 'address', name: 'address' },
                 { data: 'company_name', name: 'company_name' },
+                { data: 'role', name: 'role' },
                 { data: 'deleted_at', name: 'deleted_at', width: '30px', class: 'text-center', searchable: false },
             ]
         });

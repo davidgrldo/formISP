@@ -42,9 +42,21 @@
                         <li class="nav-item"><a href="{{ route('customer.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'customer' ? 'active' : '' }}">Customer</a>
                         </li>
+                        <li class="nav-item"><a href="{{ route('request.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'pengajuan' ? 'active' : '' }}">Request</a>
+                        </li>
                     </ul>
                 </li>
-                @elseif(auth('customer')->check())
+                @else
+                <li class="nav-item">
+                    <a href="{{ route('customer.profil') }}"
+                        class="nav-link {{ request()->segment(2) == 'profile' ? 'active' : '' }}">
+                        <i class="icon-user"></i>
+                        <span>
+                            Profile
+                        </span>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('pengajuan.index') }}"
                         class="nav-link {{ request()->segment(2) == 'pengajuan' ? 'active' : '' }}">

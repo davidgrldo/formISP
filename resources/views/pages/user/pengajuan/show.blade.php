@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Detail Pengajuan')
+@section('title', 'Set Status')
 
 @section('content')
 @component('layouts.component.header')
@@ -7,16 +7,16 @@
 
 @endslot
 @slot('breadcumbs')
-<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pengajuan / Detail</h4>
+<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pengajuan / Set Status</h4>
 @endslot
 @slot('breadcumbs2')
 <a href="{{url('/pages/dashboard')}}" class="breadcrumb-item"> Home</a>
 <a href="{{route('pengajuan.index')}}" class="breadcrumb-item">Pengajuan</a>
-<span class="breadcrumb-item active">Detail</span>
+<span class="breadcrumb-item active">Set Status</span>
 @endslot
 @endcomponent
 <!-- Main content -->
-<div class="container">
+<div class="content">
     <div class="row mt-3 d-flex align-items-center justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -78,7 +78,7 @@
                         <ul class="list list-unstyled mb-0 text-right">
                             <li>
                                 <h5 class="my-2">
-                                    {{ auth('customer')->check() ? auth('customer')->user()->name : Auth::user()->name }}
+                                    {{ $customer->name }}
                                 </h5>
                             </li>
                             <li>
@@ -92,10 +92,15 @@
                             <li>{{ $item->brand_name }}</li>
                             <li>{{ $item->type }}</li>
                         </ul>
-
                     </div>
-                    <div class="d-flex justify-content-end mt-4">
-                        <img src="data:image/png;base64, {!! base64_encode(QrCode::errorCorrection('H')->format('png')->merge('/public/images/logo1.png', .3)->size(150)->generate(url('/status/'.$item->token))) !!} ">
+                    <div class="text-right mt-2">
+                        @if($item->status != 'Disetujui' && $item->status != 'Tidak Disetujui')
+                        <button type="button" class="btn btn-md btn-primary pull-right setuju"
+                            data-value="setuju" data-id="{{$item->id}}">Setuju</button>
+                        <button type="button" class="btn btn-md btn-danger pull-right tidak_setuju"
+                            data-value="tidak_setuju" data-id="{{$item->id}}">Tidak
+                            Setuju</button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -103,3 +108,52 @@
     </div>
 </div>
 @endsection
+
+@push('javascript')
+<script>
+    $('.setuju, .tidak_setuju').on('click', function(){
+        let data = $(this).data('value');
+        let id = $(this).data('id');
+        swal.fire({
+        title: 'Are you sure you want to update this data?',
+        text: "",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: "Yes, update!",
+        cancelButtonText: 'No, please ',
+        confirmButtonClass: 'btn btn-success',
+        cancelButtonClass: 'btn btn-danger',
+        }).then((result) => {
+        if (result.value) {
+        $.ajax({
+        url: "{{route('request.set_status')}}",
+        method: "POST",
+        data: {type: data, id:id },
+        dataType: 'json',
+        success: function(response) {
+            swalInit.fire({
+                title: "Success!",
+                text: response.message,
+                type: 'success',
+                buttonStyling: false,
+                confirmButtonClass: 'btn btn-primary btn-lg',
+            }).then(function() {
+                window.location.reload();
+            })
+            },
+        error: function(response) {
+            if (response.status == 500) {
+                console.log(response)
+                swalInit.fire("Error", response.responseJSON.message, 'error');
+            }
+            if (response.status == 422) {
+                var error = response.responseJSON.errors;
+            }
+        }
+    });
+        }
+        });
+    });
+
+</script>
+@endpush

@@ -10,7 +10,6 @@ use DB;
 use Carbon\Carbon;
 use Str;
 use Yajra\DataTables\DataTables;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PengajuanController extends Controller
 {
@@ -48,7 +47,6 @@ class PengajuanController extends Controller
 
             MsPengajuan::create([
                 'no_pendaftaran' => Carbon::now()->format('d/m/Y').'/'.generate_invoice(10),
-                'name'          => $request->name,
                 'no_ktp'        => $request->no_ktp,
                 'image_ktp'     => $request->file('image_ktp')->store(
                 'assets/ktp', 'public'),
@@ -158,8 +156,8 @@ class PengajuanController extends Controller
 
         return DataTables::of($data)
             ->addIndexColumn()
-            ->editColumn('name', function ($item) {
-                return '<a href="' . route('pengajuan.show', $item->id) . '">' . $item->name . '</a>';
+            ->editColumn('no_ktp', function ($item) {
+                return '<a href="' . route('pengajuan.show', $item->id) . '">' . $item->no_ktp . '</a>';
             })
             ->editColumn('deleted_at', function ($item) {
                 $green = "<span style='color: green'><i class='icon-checkmark'></i></span>";

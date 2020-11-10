@@ -50,6 +50,8 @@ class CustomerController extends Controller
                 'email' => $request->email,
                 'address' => $request->address,
                 'company_name' => $request->company_name,
+                'role' => $request->role,
+                'nationallity' => $request->nationallity,
                 'password' => \bcrypt($request->password)
             ]);
 
@@ -99,11 +101,12 @@ class CustomerController extends Controller
             $data = MsCustomer::findOrFail($id);
 
             $data->update([
-                'name' => $request->name,
                 'phone' => $request->phone,
                 'email' => $request->email,
+                'role' => $request->role,
                 'address' => $request->address,
-                'company_name' => $request->company_name
+                'company_name' => $request->company_name,
+                'nationallity' => $request->nationallity,
             ]);
 
             if (!empty($request->password)) {
@@ -176,5 +179,39 @@ class CustomerController extends Controller
             })
             ->escapeColumns([])
             ->make(true);
+    }
+
+    public function showProfile(Request $request)
+    {
+        $data = MsCustomer::findOrFail(auth('customer')->user()->id);
+        return view('pages.customer.profil', compact('data'));
+    }
+
+    public function updateProfile(CustomerUpdateRequest $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+            $data = MsCustomer::findOrFail($id);
+
+            $data->update([
+                'phone' => $request->phone,
+                'email' => $request->email,
+                'role' => $request->role,
+                'address' => $request->address,
+                'company_name' => $request->company_name,
+                'nationallity' => $request->nationallity,
+            ]);
+
+            if (!empty($request->password)) {
+                $data->update(['password' => \bcrypt($request->password)]);
+            }
+
+            DB::commit();
+            Session::flash('notification', trans('notification.itemmaster.created'));
+            return response()->json(['message' => 'Customer has been updated'], 200);
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 }

@@ -16,7 +16,6 @@ class CreateMsPengajuansTable extends Migration
         Schema::create('ms_pengajuans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('no_pendaftaran');
-            $table->string('name');
             $table->string('no_ktp');
             $table->string('image_ktp');
             $table->string('no_npwp');

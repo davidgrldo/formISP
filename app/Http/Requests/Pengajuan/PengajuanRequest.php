@@ -24,7 +24,6 @@ class PengajuanRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'          => 'required',
             'no_ktp'        => 'required|digits:16|numeric',
             'image_ktp'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'no_npwp'       => 'required|digits:15|numeric',

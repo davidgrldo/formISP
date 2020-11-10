@@ -37,6 +37,9 @@ Route::group(['prefix' => 'pages'], function () {
         Route::get("/logout", "Auth\CustomerAuthController@logout")->name("customer.logout");
         Route::get('dashboard', 'CustomerDashboard@index')->name('customer.dashboard');
 
+        Route::get('/profil', 'Customer\CustomerController@showProfile')->name('customer.profil');
+        Route::put('/profil/{id}/update', 'Customer\CustomerController@updateProfile')->name('customer.profile-update');
+
         /**
          * Pengajuan Page
          **/
@@ -73,5 +76,13 @@ Route::group(['prefix' => 'backend'], function () {
         Route::post('customer/restore/{id}', 'Customer\CustomerController@restore')->name('customer.restore');
         Route::delete('customer/remove/{id}', 'Customer\CustomerController@remove')->name('customer.delete');
         Route::resource('customer', 'Customer\CustomerController');
+
+        /**
+         * Pengajuan Page
+         **/
+        Route::get('request/data', 'Backend\PengajuanController@data')->name("request.data");
+        Route::post('request/status','Backend\PengajuanController@setStatus')->name('request.set_status');
+        Route::resource('request', 'Backend\PengajuanController');
+
     });
 });

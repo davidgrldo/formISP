@@ -21,7 +21,7 @@ class CustomerAuthController extends Controller
             'password' => $request->password
             ])
         ) {
-            return redirect('pages/dashboard');
+            return redirect('pages/profil');
         } else {
             return redirect('pages/login')->with(["error" => 'Error']);
         }
