@@ -202,6 +202,7 @@
     <!-- /inner container -->
 
 </div>
+</div>
 @endsection
 
 @push('javascript')
