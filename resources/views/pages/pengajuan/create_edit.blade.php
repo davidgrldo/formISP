@@ -30,51 +30,60 @@
                     <form class="wizard-form steps-validation" action="#" id="form-pengajuan" data-fouc>
 						<h6>Information</h6>
 						<fieldset>
-						 <p class="text-center">
-                  SURAT PERJANJIAN KERJASAMA KANTOR LAYANAN PELANGGAN
-                  <br>PT IKHLAS CIPTA TEKNOLOGI<br>
-                  INTERNET SERVICE PROVIDER<br>
-                  DENGAN<br>
-                  <br>(No .001/PKS.ICT/X1/2020)<br>
-              </p>
-              <p>
-                        Pada hari ini [HARI] tanggal [TANGGAL] bulan [BULAN] tahun [TAHUN] bertempat di
-                        [TEMPAT]
-                        <br>Yang bertanda tangan dibawah ini :
-                        <br>&nbsp; Nama &nbsp; : [NAMA]
-                        <br>&nbsp; No KTP : [NO_KTP]
-                        <br>&nbsp; Alamat : [ALAMAT]
-                        <br>&nbsp; Jabatan : [JABATAN]
-                        <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN]<br>
-                        <br>Dalam hal ini bertindak untuk dan atas nama PT Ikhlas Cipta Teknologi ISP,
-                        berkedudukan
-                        di Jakarta selanjutnya di
-                        sebutkan sebagai <strong>PIHAK PERTAMA</strong>
-                        <br>&nbsp; Nama : [NAMA_SECONDARY]
-                        <br>&nbsp; No KTP : [NO_KTP_2]
-                        <br>&nbsp; Alamat : [ALAMAT_2]
-                        <br>&nbsp; Jabatan : [JABATAN_2]
-                        <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN_2]<br>
-                        <br>Dalam hal ini bertindak untuk dan atas nama [NAMA], berkedudukan di
-                        [TEMPAT]<br>
-                        <br>Selanjutnya di sebutkan sebagai <strong>PIHAK KEDUA</strong><br>
-                        <br>Bahwa PIHAK PERTAMA adalah suatu perusahaan swasta yang
-                        bergerak dalam bidang usaha Jasa Internet Service Provider
-                        dengan NIB 0220009452023 kode KBLI 61921 serta telah mendapatkan Surat
-                        Keterangan
-                        Laik
-                        Operasi dengan Nomor :
-                        545/TEL.02.02/2020 sehingga mempunya landasan untuk dapat menawarkan Jasa
-                        tersebut
-                        diatas dalam ruang lingkup Nasional.<br>
-                        <br>Bahwa untuk dapat memasarkan Produk/Jasa layanan kedua belah pihak perlu
-                        mengadakan
-                        kerjasama promosi dan penjualan di
-                        wilayah layanan [LAYANAN] yang di tuangkan kedalam suatu perjanjian kerjasama
-                        layanan,
-                        dengan syarat-syarat yang akan di
-                        tuangkan pada masing masing pasal perjanjian kerjasama sebagai berikut :
-                    </p>
+						 <p class="text-center font-weight-bold" >
+                            SURAT PERJANJIAN KERJASAMA KANTOR LAYANAN PELANGGAN
+                            <br>PT IKHLAS CIPTA TEKNOLOGI<br>
+                            INTERNET SERVICE PROVIDER<br>
+                            DENGAN
+                            <br>(No .001/PKS.ICT/X1/2020)<br>
+                        </p>
+                        <p>
+                            Pada hari ini {{ date('D') }} tanggal {{ date('d') }} bulan {{ date('M') }} tahun {{ date('Y') }} bertempat di
+                            jakarta
+                            <br>Yang bertanda tangan dibawah ini :
+                            <div class="ml-2">
+                               <ul>
+                                   <li>Nama : </li>
+                                   <li>No KTP : </li>
+                                   <li>Alamat : </li>
+                                   <li>Jabatan : </li>
+                                   <li>Kewarganegaraan : </li>
+                               </ul>
+                            </div>
+                            Dalam hal ini bertindak untuk dan atas nama PT Ikhlas Cipta Teknologi ISP,
+                            berkedudukan
+                            di Jakarta selanjutnya di
+                            sebutkan sebagai <strong>PIHAK PERTAMA</strong>
+                            <br>
+                            <div class="ml-2 mt-2">
+                                <ul>
+                                    <li>Nama : </li>
+                                    <li>No KTP : </li>
+                                    <li>Alamat : </li>
+                                    <li>Jabatan : </li>
+                                    <li>Kewarganegaraan : </li>
+                                </ul>
+                             </div>
+                            Dalam hal ini bertindak untuk dan atas nama [NAMA], berkedudukan di
+                            [TEMPAT]
+                            <br>Selanjutnya di sebutkan sebagai <strong>PIHAK KEDUA</strong><br>
+                            <br>Bahwa PIHAK PERTAMA adalah suatu perusahaan swasta yang
+                            bergerak dalam bidang usaha Jasa Internet Service Provider
+                            dengan NIB 0220009452023 kode KBLI 61921 serta telah mendapatkan Surat
+                            Keterangan
+                            Laik
+                            Operasi dengan Nomor :
+                            545/TEL.02.02/2020 sehingga mempunya landasan untuk dapat menawarkan Jasa
+                            tersebut
+                            diatas dalam ruang lingkup Nasional.<br>
+                            <br>Bahwa untuk dapat memasarkan Produk/Jasa layanan kedua belah pihak perlu
+                            mengadakan
+                            kerjasama promosi dan penjualan di
+                            wilayah layanan [LAYANAN] yang di tuangkan kedalam suatu perjanjian kerjasama
+                            layanan,
+                            dengan syarat-syarat yang akan di
+                            tuangkan pada masing masing pasal perjanjian kerjasama sebagai berikut :
+                        </p>
                       <p class="text-center">
                                     <strong>PASAL I</strong><br>
                                     <strong>DEFINSI</strong>
