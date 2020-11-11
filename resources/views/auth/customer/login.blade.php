@@ -49,6 +49,9 @@
                         <i class="icon-circle-right2 ml-2"></i>
                     </button>
                 </div>
+                <div class="text-center">
+                    <a href="{{ url('/pages/register') }}">Create Account</a>
+                </div>
             </div>
         </div>
     </form>

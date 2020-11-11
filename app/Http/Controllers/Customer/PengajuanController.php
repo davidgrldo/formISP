@@ -10,6 +10,8 @@ use DB;
 use Carbon\Carbon;
 use Str;
 use Yajra\DataTables\DataTables;
+use WordTemplate;
+use Auth;
 
 class PengajuanController extends Controller
 {
@@ -47,12 +49,17 @@ class PengajuanController extends Controller
 
             MsPengajuan::create([
                 'no_pendaftaran' => Carbon::now()->format('d/m/Y').'/'.generate_invoice(10),
+                'name'          => $request->name,
                 'no_ktp'        => $request->no_ktp,
                 'image_ktp'     => $request->file('image_ktp')->store(
-                'assets/ktp', 'public'),
+                    'assets/ktp',
+                    'public'
+                ),
                 'no_npwp'       => $request->no_npwp,
                 'image_npwp'    => $request->file('image_npwp')->store(
-                'assets/npwp', 'public'),
+                    'assets/npwp',
+                    'public'
+                ),
                 'address'       => $request->address,
                 'brand_name'    => $request->brand_name,
                 'type'          => $request->type,
@@ -115,7 +122,7 @@ class PengajuanController extends Controller
 
     private function listing()
     {
-        $layanan = ['Layanan' => 'Layanan','Subnetting' => 'Subnetting'];
+        $layanan = ['Layanan' => 'Layanan', 'Subnetting' => 'Subnetting'];
         $options['layanan'] = $layanan;
 
         return $options;
@@ -164,17 +171,33 @@ class PengajuanController extends Controller
                 $red = "<span style='color: red'><i class='icon-x'></i></span>";
                 return is_null($item->deleted_at) ? $green : $red;
             })
-            ->editColumn('status', function($item) {
-                if($item->status == 'Pending') {
+            ->editColumn('status', function ($item) {
+                if ($item->status == 'Pending') {
                     return "<label class='badge badge-warning'>Pending</label>";
-                } elseif($item->status == 'Disetujui') {
+                } elseif ($item->status == 'Disetujui') {
                     return "<label class='badge badge-success'>Disetujui</label>";
                 } else {
                     return "<label class='badge badge-danger'>Tidak Disetujui</label>";
-
                 }
             })
             ->escapeColumns([])
             ->make(true);
+    }
+
+    public function exportWord(Request $request, $token)
+    {
+        $file = public_path('/files/output.rtf');
+        $data = MsPengajuan::where('token', $token)->first();
+        // $data['name'] = Auth::guard('customer')->user()->name;
+        $array = array(
+            '[NO_AUTO]' =>  $data->no_pendaftaran,
+            '[TANGGAL_BULAN]' => $data->created_at->format('d/m/Y'),
+            '[NAME]' => 'David',
+            '[DATE]' => $data->created_at->format('d/m/Y')
+        );
+
+        $nama_file = 'surat-kerjasama.doc';
+
+        return WordTemplate::export($file, $array, $nama_file);
     }
 }

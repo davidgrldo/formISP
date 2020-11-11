@@ -16,7 +16,7 @@
 @endslot
 @endcomponent
 <!-- Main content -->
-<div class="container">
+<div class="content">
     <div class="row mt-3 d-flex align-items-center justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -37,7 +37,6 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    {{-- <img src="{{ url('../images/logo.png') }}" class="mb-2 mt-2" alt="" style="width: 120px;"> --}}
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-4">
@@ -97,6 +96,11 @@
                     <div class="d-flex justify-content-end mt-4">
                         <img src="data:image/png;base64, {!! base64_encode(QrCode::errorCorrection('H')->format('png')->merge('/public/images/logo1.png', .3)->size(150)->generate(url('/status/'.$item->token))) !!} ">
                     </div>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ route('pengajuan.export', $item->token) }}" class="btn btn-success btn-sm text-light">
+                        <i class="icon-download4"> Download File</i>
+                    </a>
                 </div>
             </div>
         </div>
