@@ -11,7 +11,6 @@ use Carbon\Carbon;
 use Str;
 use Yajra\DataTables\DataTables;
 use WordTemplate;
-use Auth;
 
 class PengajuanController extends Controller
 {

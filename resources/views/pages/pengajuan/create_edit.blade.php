@@ -26,7 +26,7 @@
                     <h5 class="card-title">{{isset($data) ? 'Edit Pengajuan' : 'Tambah Pengajuan'}}</h5>
                 </div>
                 <div class="card-header bg-white header-elements-inline">
-                    <h6 class="card-title">Basic example</h6>
+                    <h6 class="card-title">Surat Perjanjian Kerjasama</h6>
                     <div class="header-elements">
                         <div class="list-icons">
                             <a class="list-icons-item" data-action="collapse"></a>
@@ -36,750 +36,192 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div>
                     <form class="wizard-form steps-basic wizard clearfix" action="#" data-fouc="" role="application"
                         id="steps-uid-0">
                         <div class="steps clearfix">
                             <ul role="tablist">
                                 <li role="tab" class="first done" aria-disabled="false" aria-selected="false"><a
-                                        id="steps-uid-0-t-0" href="#steps-uid-0-h-0" aria-controls="steps-uid-0-p-0"
-                                        class=""><span class="number">1</span>
-                                        Personal data</a></li>
-                                <li role="tab" class="current" aria-disabled="false" aria-selected="true"><a
-                                        id="steps-uid-0-t-1" href="#steps-uid-0-h-1" aria-controls="steps-uid-0-p-1"
-                                        class=""><span class="current-info audible">current step: </span><span
-                                            class="number">2</span> Your
-                                        education</a></li>
-                                <li role="tab" class="done" aria-disabled="false" aria-selected="false"><a
-                                        id="steps-uid-0-t-2" href="#steps-uid-0-h-2" aria-controls="steps-uid-0-p-2"
-                                        class=""><span class="number">3</span> Your
-                                        experience</a></li>
-                                <li role="tab" class="last done" aria-disabled="false" aria-selected="false"><a
-                                        id="steps-uid-0-t-3" href="#steps-uid-0-h-3" aria-controls="steps-uid-0-p-3"
-                                        class=""><span class="number">4</span>
-                                        Additional info</a></li>
+                                        id="first" href="#first" aria-controls="first" class=""><span
+                                            class="number">1</span>Page 1</a></li>
+                                <li role="tab" class="current" aria-disabled="false" aria-selected="false"><a
+                                        id="second" href="#second" aria-controls="second" class=""><span
+                                            class="number">2</span> Page 2</a></li>
+                                <li role="tab" class="current" aria-disabled="false" aria-selected="false"><a id="third"
+                                        href="#third" aria-controls="third" class=""><span class="number">3</span>Page
+                                        3</a></li>
                             </ul>
                         </div>
                         <div class="content clearfix">
-                            <h6 id="steps-uid-0-h-0" tabindex="-1" class="title">Personal data</h6>
-                            <fieldset id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0"
-                                class="body" aria-hidden="true" style="display: none;">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Select location:</label>
-                                            <select name="location" data-placeholder="Select position"
-                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                data-fouc="" tabindex="-1" aria-hidden="true" data-select2-id="239">
-                                                <option data-select2-id="241"></option>
-                                                <optgroup label="North America">
-                                                    <option value="1">United States</option>
-                                                    <option value="2">Canada</option>
-                                                </optgroup>
-                                                <optgroup label="Latin America">
-                                                    <option value="3">Chile</option>
-                                                    <option value="4">Argentina</option>
-                                                    <option value="5">Colombia</option>
-                                                    <option value="6">Peru</option>
-                                                </optgroup>
-                                                <optgroup label="Europe">
-                                                    <option value="8">Croatia</option>
-                                                    <option value="9">Hungary</option>
-                                                    <option value="10">Ukraine</option>
-                                                    <option value="11">Greece</option>
-                                                </optgroup>
-                                            </select><span class="select2 select2-container select2-container--default"
-                                                dir="ltr" data-select2-id="240" style="width: 100%;"><span
-                                                    class="selection"><span
-                                                        class="select2-selection select2-selection--single"
-                                                        role="combobox" aria-haspopup="true" aria-expanded="false"
-                                                        tabindex="0" aria-disabled="false"
-                                                        aria-labelledby="select2-location-z2-container"><span
-                                                            class="select2-selection__rendered"
-                                                            id="select2-location-z2-container" role="textbox"
-                                                            aria-readonly="true"><span
-                                                                class="select2-selection__placeholder">Select
-                                                                position</span></span><span
-                                                            class="select2-selection__arrow" role="presentation"><b
-                                                                role="presentation"></b></span></span></span><span
-                                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Select position:</label>
-                                            <select name="position" data-placeholder="Select position"
-                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                data-fouc="" tabindex="-1" aria-hidden="true" data-select2-id="257">
-                                                <option data-select2-id="259"></option>
-                                                <optgroup label="Developer Relations">
-                                                    <option value="1">Sales Engineer</option>
-                                                    <option value="2">Ads Solutions Consultant</option>
-                                                    <option value="3">Technical Solutions Consultant</option>
-                                                    <option value="4">Business Intern</option>
-                                                </optgroup>
-
-                                                <optgroup label="Engineering &amp; Design">
-                                                    <option value="5">Interaction Designer</option>
-                                                    <option value="6">Technical Program Manager</option>
-                                                    <option value="7">Software Engineer</option>
-                                                    <option value="8">Information Security Engineer</option>
-                                                </optgroup>
-
-                                                <optgroup label="Marketing &amp; Communications">
-                                                    <option value="13">Media Outreach Manager</option>
-                                                    <option value="14">Research Manager</option>
-                                                    <option value="15">Marketing Intern</option>
-                                                    <option value="16">Business Intern</option>
-                                                </optgroup>
-                                            </select><span class="select2 select2-container select2-container--default"
-                                                dir="ltr" data-select2-id="258" style="width: 100%;"><span
-                                                    class="selection"><span
-                                                        class="select2-selection select2-selection--single"
-                                                        role="combobox" aria-haspopup="true" aria-expanded="false"
-                                                        tabindex="0" aria-disabled="false"
-                                                        aria-labelledby="select2-position-lp-container"><span
-                                                            class="select2-selection__rendered"
-                                                            id="select2-position-lp-container" role="textbox"
-                                                            aria-readonly="true"><span
-                                                                class="select2-selection__placeholder">Select
-                                                                position</span></span><span
-                                                            class="select2-selection__arrow" role="presentation"><b
-                                                                role="presentation"></b></span></span></span><span
-                                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Applicant name:</label>
-                                            <input type="text" name="name" class="form-control" placeholder="John Doe">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Email address:</label>
-                                            <input type="email" name="email" class="form-control"
-                                                placeholder="your@email.com">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Phone #:</label>
-                                            <input type="text" name="tel" class="form-control"
-                                                placeholder="+99-99-9999-9999" data-mask="+99-99-9999-9999">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label>Date of birth:</label>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <select name="birth-month" data-placeholder="Month"
-                                                        class="form-control form-control-select2 select2-hidden-accessible"
-                                                        data-fouc="" tabindex="-1" aria-hidden="true"
-                                                        data-select2-id="272">
-                                                        <option data-select2-id="274"></option>
-                                                        <option value="1">January</option>
-                                                        <option value="2">February</option>
-                                                        <option value="3">March</option>
-                                                        <option value="4">April</option>
-                                                        <option value="5">May</option>
-                                                        <option value="6">June</option>
-                                                        <option value="7">July</option>
-                                                        <option value="8">August</option>
-                                                        <option value="9">September</option>
-                                                        <option value="10">October</option>
-                                                        <option value="11">November</option>
-                                                        <option value="12">December</option>
-                                                    </select><span
-                                                        class="select2 select2-container select2-container--default"
-                                                        dir="ltr" data-select2-id="273" style="width: 100%;"><span
-                                                            class="selection"><span
-                                                                class="select2-selection select2-selection--single"
-                                                                role="combobox" aria-haspopup="true"
-                                                                aria-expanded="false" tabindex="0" aria-disabled="false"
-                                                                aria-labelledby="select2-birth-month-48-container"><span
-                                                                    class="select2-selection__rendered"
-                                                                    id="select2-birth-month-48-container" role="textbox"
-                                                                    aria-readonly="true"><span
-                                                                        class="select2-selection__placeholder">Month</span></span><span
-                                                                    class="select2-selection__arrow"
-                                                                    role="presentation"><b
-                                                                        role="presentation"></b></span></span></span><span
-                                                            class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <select name="birth-day" data-placeholder="Day"
-                                                        class="form-control form-control-select2 select2-hidden-accessible"
-                                                        data-fouc="" tabindex="-1" aria-hidden="true"
-                                                        data-select2-id="286">
-                                                        <option data-select2-id="288"></option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="...">...</option>
-                                                        <option value="31">31</option>
-                                                    </select><span
-                                                        class="select2 select2-container select2-container--default"
-                                                        dir="ltr" data-select2-id="287" style="width: 100%;"><span
-                                                            class="selection"><span
-                                                                class="select2-selection select2-selection--single"
-                                                                role="combobox" aria-haspopup="true"
-                                                                aria-expanded="false" tabindex="0" aria-disabled="false"
-                                                                aria-labelledby="select2-birth-day-ox-container"><span
-                                                                    class="select2-selection__rendered"
-                                                                    id="select2-birth-day-ox-container" role="textbox"
-                                                                    aria-readonly="true"><span
-                                                                        class="select2-selection__placeholder">Day</span></span><span
-                                                                    class="select2-selection__arrow"
-                                                                    role="presentation"><b
-                                                                        role="presentation"></b></span></span></span><span
-                                                            class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <select name="birth-year" data-placeholder="Year"
-                                                        class="form-control form-control-select2 select2-hidden-accessible"
-                                                        data-fouc="" tabindex="-1" aria-hidden="true"
-                                                        data-select2-id="300">
-                                                        <option data-select2-id="302"></option>
-                                                        <option value="1">1980</option>
-                                                        <option value="2">1981</option>
-                                                        <option value="3">1982</option>
-                                                        <option value="4">1983</option>
-                                                        <option value="5">1984</option>
-                                                        <option value="6">1985</option>
-                                                        <option value="7">1986</option>
-                                                        <option value="8">1987</option>
-                                                        <option value="9">1988</option>
-                                                        <option value="10">1989</option>
-                                                        <option value="11">1990</option>
-                                                    </select><span
-                                                        class="select2 select2-container select2-container--default"
-                                                        dir="ltr" data-select2-id="301" style="width: 100%;"><span
-                                                            class="selection"><span
-                                                                class="select2-selection select2-selection--single"
-                                                                role="combobox" aria-haspopup="true"
-                                                                aria-expanded="false" tabindex="0" aria-disabled="false"
-                                                                aria-labelledby="select2-birth-year-ye-container"><span
-                                                                    class="select2-selection__rendered"
-                                                                    id="select2-birth-year-ye-container" role="textbox"
-                                                                    aria-readonly="true"><span
-                                                                        class="select2-selection__placeholder">Year</span></span><span
-                                                                    class="select2-selection__arrow"
-                                                                    role="presentation"><b
-                                                                        role="presentation"></b></span></span></span><span
-                                                            class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <fieldset id="first" role="tabpanel" aria-labelledby="first" class="body current"
+                                aria-hidden="false" style="">
+                                <p class="text-center">
+                                    SURAT PERJANJIAN KERJASAMA KANTOR LAYANAN PELANGGAN
+                                    <br>PT IKHLAS CIPTA TEKNOLOGI<br>
+                                    INTERNET SERVICE PROVIDER<br>
+                                    DENGAN<br>
+                                    <br>(No .001/PKS.ICT/X1/2020)<br>
+                                </p>
+                                <p>
+                                    Pada hari ini [HARI] tanggal [TANGGAL] bulan [BULAN] tahun [TAHUN] bertempat di
+                                    [TEMPAT]
+                                    <br>Yang bertanda tangan dibawah ini :
+                                    <br>&nbsp; Nama &nbsp; : [NAMA]
+                                    <br>&nbsp; No KTP : [NO_KTP]
+                                    <br>&nbsp; Alamat : [ALAMAT]
+                                    <br>&nbsp; Jabatan : [JABATAN]
+                                    <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN]<br>
+                                    <br>Dalam hal ini bertindak untuk dan atas nama PT Ikhlas Cipta Teknologi ISP,
+                                    berkedudukan
+                                    di Jakarta selanjutnya di
+                                    sebutkan sebagai <strong>PIHAK PERTAMA</strong>
+                                    <br>&nbsp; Nama : [NAMA_SECONDARY]
+                                    <br>&nbsp; No KTP : [NO_KTP_2]
+                                    <br>&nbsp; Alamat : [ALAMAT_2]
+                                    <br>&nbsp; Jabatan : [JABATAN_2]
+                                    <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN_2]<br>
+                                    <br>Dalam hal ini bertindak untuk dan atas nama [NAMA], berkedudukan di
+                                    [TEMPAT]<br>
+                                    <br>Selanjutnya di sebutkan sebagai <strong>PIHAK KEDUA</strong><br>
+                                    <br>Bahwa PIHAK PERTAMA adalah suatu perusahaan swasta yang
+                                    bergerak dalam bidang usaha Jasa Internet Service Provider
+                                    dengan NIB 0220009452023 kode KBLI 61921 serta telah mendapatkan Surat
+                                    Keterangan
+                                    Laik
+                                    Operasi dengan Nomor :
+                                    545/TEL.02.02/2020 sehingga mempunya landasan untuk dapat menawarkan Jasa
+                                    tersebut
+                                    diatas dalam ruang lingkup Nasional.<br>
+                                    <br>Bahwa untuk dapat memasarkan Produk/Jasa layanan kedua belah pihak perlu
+                                    mengadakan
+                                    kerjasama promosi dan penjualan di
+                                    wilayah layanan [LAYANAN] yang di tuangkan kedalam suatu perjanjian kerjasama
+                                    layanan,
+                                    dengan syarat-syarat yang akan di
+                                    tuangkan pada masing masing pasal perjanjian kerjasama sebagai berikut :
+                                </p>
                             </fieldset>
 
-                            <h6 id="steps-uid-0-h-1" tabindex="-1" class="title current">Your education</h6>
-                            <fieldset id="steps-uid-0-p-1" role="tabpanel" aria-labelledby="steps-uid-0-h-1"
-                                class="body current" aria-hidden="false" style="">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>University:</label>
-                                            <input type="text" name="university" placeholder="University name"
-                                                class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Country:</label>
-                                            <select name="university-country" data-placeholder="Choose a Country..."
-                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                data-fouc="" tabindex="-1" aria-hidden="true" data-select2-id="307">
-                                                <option data-select2-id="309"></option>
-                                                <option value="1">United States</option>
-                                                <option value="2">France</option>
-                                                <option value="3">Germany</option>
-                                                <option value="4">Spain</option>
-                                            </select><span class="select2 select2-container select2-container--default"
-                                                dir="ltr" data-select2-id="308" style="width: 100%;"><span
-                                                    class="selection"><span
-                                                        class="select2-selection select2-selection--single"
-                                                        role="combobox" aria-haspopup="true" aria-expanded="false"
-                                                        tabindex="0" aria-disabled="false"
-                                                        aria-labelledby="select2-university-country-t9-container"><span
-                                                            class="select2-selection__rendered"
-                                                            id="select2-university-country-t9-container" role="textbox"
-                                                            aria-readonly="true"><span
-                                                                class="select2-selection__placeholder">Choose a
-                                                                Country...</span></span><span
-                                                            class="select2-selection__arrow" role="presentation"><b
-                                                                role="presentation"></b></span></span></span><span
-                                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Degree level:</label>
-                                            <input type="text" name="degree-level" placeholder="Bachelor, Master etc."
-                                                class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Specialization:</label>
-                                            <input type="text" name="specialization"
-                                                placeholder="Design, Development etc." class="form-control">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>From:</label>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-from-month" data-placeholder="Month"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="313">
-                                                                <option data-select2-id="315"></option>
-                                                                <option value="January">January</option>
-                                                                <option value="...">...</option>
-                                                                <option value="December">December</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="314"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-from-month-v3-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-from-month-v3-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Month</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-from-year" data-placeholder="Year"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="319">
-                                                                <option data-select2-id="321"></option>
-                                                                <option value="1995">1995</option>
-                                                                <option value="...">...</option>
-                                                                <option value="1980">1980</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="320"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-from-year-49-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-from-year-49-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Year</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label>To:</label>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-to-month" data-placeholder="Month"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="325">
-                                                                <option data-select2-id="327"></option>
-                                                                <option value="January">January</option>
-                                                                <option value="...">...</option>
-                                                                <option value="December">December</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="326"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-to-month-i2-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-to-month-i2-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Month</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-to-year" data-placeholder="Year"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="331">
-                                                                <option data-select2-id="333"></option>
-                                                                <option value="1995">1995</option>
-                                                                <option value="...">...</option>
-                                                                <option value="1980">1980</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="332"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-to-year-x3-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-to-year-x3-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Year</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Language of education:</label>
-                                            <input type="text" name="education-language"
-                                                placeholder="English, German etc." class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
+                            <fieldset id="second" role="tabpanel" aria-labelledby="second" class="body current"
+                                aria-hidden="false" style="">
+                                <p class="text-center">
+                                    <strong>PASAL I</strong><br>
+                                    <strong>DEFINSI</strong>
+                                </p>
+                                <p>
+                                    1. PKS adalah Perjanjian Kerjasama antara PIHALK PERTAMA dan PIHAK KEDUA dalam
+                                    menjalakan dan menggunakan merk dagang/nama
+                                    dagan ImediaNet atas dasar yang telah ditentukan.<br>
+                                    2. Internet adalah suatu jaringan global yang saling terhubung antara satu dengan
+                                    lainnya dan di atur dalam Protokol jaringan<br>
+                                    3. Internet Service Provider (ISP) adalah penyelenggara akses Internet dan pelayanan
+                                    aplikasi Internet ( hosting, webdesign, data center, colocation server, serta
+                                    aplikasi multimedia lainnya yang memanfaatkan akses Internet).<br>
+                                    4. Akses Internet adalah koneksi logika ke Internet yang menghubungkan pengguna
+                                    Internet ke NOC ISP, dengan bentuk dial up atau dedicated leasedlined/ wavelane<br>
+                                    5. Bandwidth adalah suatu ukuran yang menyatakan kapasitas jalur komunikasi yang
+                                    dapat digunakan. NOC (Network Operation Center) adalah pusat pengelolaan jaringan
+                                    untuk akses Internet.<br>
+                                </p>
+                                <p class="text-center">
+                                    <strong>PASAL II</strong><br>
+                                    <strong>RUANG LINGKUP</strong>
+                                </p>
+                                <p>
+                                    1. Kedua belah pihak sepakat dalam mengembangkan dan memasarkan layanan Akses
+                                    Internet dan Aplikasi dalam arti seluas
+                                    luasnya<br>
+                                    2. Perjanjian ini berlaku Ekslusif untuk wilayah sesuai wilayah layanan PIHAK
+                                    KEDUA<br>
+                                </p>
+                                <p class="text-center">
+                                    <strong>PASAL III</strong><br>
+                                    <strong>HAK DAN KEWAJIBAN PIHAK PERTAMA</strong>
+                                </p>
+                                <p>
+                                    1. Pihak Pertama berhak menerima pembayaran berdasarkan Perjanjian Kerjasama Ini<br>
+                                    2. Pihak Pertama hanya akan memberikan secara ekslusif hanya kepada satu pihak yaitu
+                                    PIHAK KEDUA sebagai pemegang lisensi
+                                    merek ISP ImediaNet dilokasi yang telah di sepakati dan selama periode tertentu<br>
+                                    3. Akan mengurus semua perizinan untuk memasarkan akses internet dengan biaya BHP di
+                                    tanggung oleh pihak Kedua<br>
+                                    4. Pihak Pertama berhak memutus sewaktu Perjanjian Ini apabila pihak kedua
+                                    menggunakan izin penyelenggara ISP ini untuk
+                                    suatu perbuatan yang melanggar ketentuan hukum di Negara Kesatuan Republik
+                                    Indonesia<br>
+                                    5. Pihak Pertama berkewajiban untuk membayarkan BHP ISP kepada dirjen Postel.<br>
+                                </p>
+                                <p class="text-center">
+                                    <strong>PASAL IV</strong><br>
+                                    <strong>HAK DAN KEWAJIBAN PIHAK KEDUA</strong>
+                                </p>
+                                <p>
+                                    1. Tidak memberikan hak izin ISP ini kepada Pihak Ketiga atau memindahkan dan
+                                    memperjual belikan pada pihak lain serta
+                                    berhak menentukan standar harga jual sendiri tanpa harus memperoleh izin dari Pihak
+                                    Pertama<br>
+                                </p>
                             </fieldset>
-
-                            <h6 id="steps-uid-0-h-2" tabindex="-1" class="title">Your experience</h6>
-                            <fieldset id="steps-uid-0-p-2" role="tabpanel" aria-labelledby="steps-uid-0-h-2"
-                                class="body" aria-hidden="true" style="display: none;">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Company:</label>
-                                            <input type="text" name="experience-company" placeholder="Company name"
-                                                class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Position:</label>
-                                            <input type="text" name="experience-position" placeholder="Company name"
-                                                class="form-control">
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>From:</label>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-from-month" data-placeholder="Month"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="337">
-                                                                <option data-select2-id="339"></option>
-                                                                <option value="January">January</option>
-                                                                <option value="...">...</option>
-                                                                <option value="December">December</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="338"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-from-month-d1-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-from-month-d1-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Month</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-from-year" data-placeholder="Year"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="343">
-                                                                <option data-select2-id="345"></option>
-                                                                <option value="1995">1995</option>
-                                                                <option value="...">...</option>
-                                                                <option value="1980">1980</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="344"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-from-year-0i-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-from-year-0i-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Year</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label>To:</label>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-to-month" data-placeholder="Month"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="349">
-                                                                <option data-select2-id="351"></option>
-                                                                <option value="January">January</option>
-                                                                <option value="...">...</option>
-                                                                <option value="December">December</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="350"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-to-month-yd-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-to-month-yd-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Month</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <select name="education-to-year" data-placeholder="Year"
-                                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                                data-fouc="" tabindex="-1" aria-hidden="true"
-                                                                data-select2-id="355">
-                                                                <option data-select2-id="357"></option>
-                                                                <option value="1995">1995</option>
-                                                                <option value="...">...</option>
-                                                                <option value="1980">1980</option>
-                                                            </select><span
-                                                                class="select2 select2-container select2-container--default"
-                                                                dir="ltr" data-select2-id="356"
-                                                                style="width: 100%;"><span class="selection"><span
-                                                                        class="select2-selection select2-selection--single"
-                                                                        role="combobox" aria-haspopup="true"
-                                                                        aria-expanded="false" tabindex="0"
-                                                                        aria-disabled="false"
-                                                                        aria-labelledby="select2-education-to-year-pw-container"><span
-                                                                            class="select2-selection__rendered"
-                                                                            id="select2-education-to-year-pw-container"
-                                                                            role="textbox" aria-readonly="true"><span
-                                                                                class="select2-selection__placeholder">Year</span></span><span
-                                                                            class="select2-selection__arrow"
-                                                                            role="presentation"><b
-                                                                                role="presentation"></b></span></span></span><span
-                                                                    class="dropdown-wrapper"
-                                                                    aria-hidden="true"></span></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Brief description:</label>
-                                            <textarea name="experience-description" rows="4" cols="4"
-                                                placeholder="Tasks and responsibilities"
-                                                class="form-control"></textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="d-block">Recommendations:</label>
-                                            <div class="uniform-uploader"><input name="recommendations" type="file"
-                                                    class="form-input-styled" data-fouc=""><span class="filename"
-                                                    style="user-select: none;">No file selected</span><span
-                                                    class="action btn bg-blue" style="user-select: none;">Choose
-                                                    File</span>
-                                            </div>
-                                            <span class="form-text text-muted">Accepted formats: pdf, doc. Max file size
-                                                2Mb</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <h6 id="steps-uid-0-h-3" tabindex="-1" class="title">Additional info</h6>
-                            <fieldset id="steps-uid-0-p-3" role="tabpanel" aria-labelledby="steps-uid-0-h-3"
-                                class="body" aria-hidden="true" style="display: none;">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="d-block">Applicant resume:</label>
-                                            <div class="uniform-uploader"><input type="file" name="resume"
-                                                    class="form-input-styled" data-fouc=""><span class="filename"
-                                                    style="user-select: none;">No file
-                                                    selected</span><span class="action btn bg-blue"
-                                                    style="user-select: none;">Choose
-                                                    File</span>
-                                            </div>
-                                            <span class="form-text text-muted">Accepted formats: pdf, doc. Max file size
-                                                2Mb</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Where did you find us?</label>
-                                            <select name="source" data-placeholder="Choose an option..."
-                                                class="form-control form-control-select2 select2-hidden-accessible"
-                                                data-fouc="" tabindex="-1" aria-hidden="true" data-select2-id="363">
-                                                <option data-select2-id="365"></option>
-                                                <option value="monster">Monster.com</option>
-                                                <option value="linkedin">LinkedIn</option>
-                                                <option value="google">Google</option>
-                                                <option value="adwords">Google AdWords</option>
-                                                <option value="other">Other source</option>
-                                            </select><span class="select2 select2-container select2-container--default"
-                                                dir="ltr" data-select2-id="364" style="width: 100%;"><span
-                                                    class="selection"><span
-                                                        class="select2-selection select2-selection--single"
-                                                        role="combobox" aria-haspopup="true" aria-expanded="false"
-                                                        tabindex="0" aria-disabled="false"
-                                                        aria-labelledby="select2-source-ar-container"><span
-                                                            class="select2-selection__rendered"
-                                                            id="select2-source-ar-container" role="textbox"
-                                                            aria-readonly="true"><span
-                                                                class="select2-selection__placeholder">Choose an
-                                                                option...</span></span><span
-                                                            class="select2-selection__arrow" role="presentation"><b
-                                                                role="presentation"></b></span></span></span><span
-                                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Availability:</label>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <div class="uniform-choice"><span><input type="radio"
-                                                                name="availability" class="form-input-styled"
-                                                                data-fouc=""></span></div>
-                                                    Immediately
-                                                </label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <div class="uniform-choice"><span><input type="radio"
-                                                                name="availability" class="form-input-styled"
-                                                                data-fouc=""></span></div>
-                                                    1 - 2 weeks
-                                                </label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <div class="uniform-choice"><span><input type="radio"
-                                                                name="availability" class="form-input-styled"
-                                                                data-fouc=""></span></div>
-                                                    3 - 4 weeks
-                                                </label>
-                                            </div>
-
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <div class="uniform-choice"><span><input type="radio"
-                                                                name="availability" class="form-input-styled"
-                                                                data-fouc=""></span></div>
-                                                    More than 1 month
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Additional information:</label>
-                                            <textarea name="additional-info" rows="5" cols="5"
-                                                placeholder="If you want to add any info, do it here."
-                                                class="form-control"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
+                            <fieldset id="third" role="tabpanel" aria-labelledby="third" class="body current"
+                                aria-hidden="false" style="">
+                                <p>
+                                    2. Pihak Kedua di perbolehkan melakukan kerjasama dengan pihak lain namun harus
+                                    dengan sepengetahuan dan telah memperoleh
+                                    izin dari Pihak Pertama<br>
+                                    3. Selama dalam perjanjian kantor layanan pihak Kedua hanya diiizinkan untuk
+                                    mendapatkan koneksi Internet hanya dari Pihak
+                                    Pertama<br>
+                                    4. Pihak Kedua bertanggung jawab sepenuhnya untuk mengelola operasional kantor
+                                    layanan dan memasang logo atau spanduk yang
+                                    akan di fasilitasi oleh Pihak Pertama di lokasi kantor layanan<br>
+                                    5. Membayar biaya komitmen awal sebagai kantor layanan sebesar 4 ( empat ) juta
+                                    rupiah yang akan dibayarkan 1 kali diawal
+                                    setelah kontrak Perjanjian Kerjasama ini di tanda tangani<br>
+                                    6. Pihak Kedua, memberikan imbalan setiap bulannya sebesar 5 % atau minimal 4 (
+                                    empat ) juta rupiah setiap bulannya, dan
+                                    yang akan dibayarkan Pihak Kedua selambat lambatnya tanggal 10 setiap bulannya.<br>
+                                    7.wajib melaporkan jumlah penjualan yang akan menjadi acuan kepada Pihak Pertama
+                                    sebagai Pelaporan BHP Internet<br>
+                                    8.diwajibkan menggunakan Frekwensi Radio yang dizinkan secara detail oleh dir postel
+                                    , Pihak Pertama tidak akan
+                                    bertanggung jawab apabila Pihak Kedua menggunakan Frekwensi yang tidak diizinkan
+                                    secara legal oleh dir postel<br>
+                                    9. Membayar biaya BHP Frekuensi kontrak 3 tahun di depan setiap BTS apabila
+                                    menggunakan Frekuensi yang berbayar<br>
+                                    10. Membayar biaya Transportasi dan fasilitas team Support Pihak Pertama apabila
+                                    pihak kedua membutuhkan maintenance Fisik
+                                    lokasi<br>
+                                </p>
+                                <p class="text-center">
+                                    <strong>PASAL V</strong><br>
+                                    <strong>JANGKA WAKTU</strong>
+                                </p>
+                                <p>
+                                    1. Masa Berlaku Kerjasama Ini adalah selama 2 (dua ) Tahun dan akan di evaluasi
+                                    setiap tahunnya<br>
+                                    2. Perubahan dan penyesuaian terhadap pasal pasal yang ada di dalam perjanjian ini
+                                    akan di tuangkan dalam addendum
+                                    perjanjian perjanjian sesuai dengan kesepakatan kedua belah pihak<br>
+                                    3. Perjanjian Kerja Sama ini untuk periode selanjutnya harus di setujui dan di
+                                    sepakati selambat-lambatnya 2 bulan sebelum
+                                    masa perjanjian ini habis masa berlakunya<br>
+                                    4. Apabila pihak kedua melanggar butir Pasal diatas maka Pihak Pertama akan
+                                    memutuskan sepihak dan apabila pihak Kedua
+                                    masih terdapat kewajiban yang belum di selesaikan harus segera di selesaikan<br>
+                                </p>
+                                <p class="text-center">
+                                    <strong>PASAL VI</strong><br>
+                                    <strong>SANKSI</strong>
+                                </p>
+                                <p>
+                                    1. Jika terjadi keterlambatan dalam pembayaran melewati masa tenggang maka Pihak
+                                    Pertama akan memutuskan koneksi Internet
+                                    pada Pihak Kedua dan atau Pembatalan Perjanjian Kerjasama ini.<br>
+                                </p>
                             </fieldset>
                         </div>
+
+
                         <div class="actions clearfix">
                             <ul role="menu" aria-label="Pagination">
                                 <li class="" aria-disabled="false"><a href="#previous" class="btn btn-light"
