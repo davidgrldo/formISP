@@ -48,8 +48,7 @@ class PengajuanController extends Controller
             DB::beginTransaction();
 
             MsPengajuan::create([
-                'no_pendaftaran' => Carbon::now()->format('d/m/Y') . '/' . generate_invoice(10),
-                'name'          => $request->name,
+                'no_pendaftaran' => "CT" . generate_invoice(10),
                 'no_ktp'        => $request->no_ktp,
                 'image_ktp'     => $request->file('image_ktp')->store(
                     'assets/ktp',
