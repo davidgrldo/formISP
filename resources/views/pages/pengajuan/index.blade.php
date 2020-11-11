@@ -89,7 +89,7 @@
                 { data: 'address', name: 'address' },
                 { data: 'brand_name', name: 'brand_name' },
                 { data: 'type', name: 'type' },
-                { data: 'status', name: 'status' },
+                { data: 'status', name: 'status', width: "50px" },
                 // { data: 'deleted_at', name: 'deleted_at', width: '30px', class: 'text-center', searchable: false },
             ]
         });

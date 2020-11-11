@@ -194,8 +194,8 @@ class PengajuanController extends Controller
         $template->setValue('tanggal_bulan', $data->created_at->format('d/m/Y'));
         $template->setValue('date', $data->created_at->format('d/m/Y'));
         $template->setImageValue('imageqr', $imageOption);
-        $template->saveAs(public_path('files/surat_pengajuan.docx'));
+        $template->saveAs(public_path("files/surat_pengajuan-$data->no_pendaftaran.docx"));
 
-        return response()->download(public_path('files/surat_pengajuan.docx'));
+        return response()->download(public_path("files/surat_pengajuan-$data->no_pendaftaran.docx"));
     }
 }
