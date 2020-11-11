@@ -10,7 +10,8 @@ use DB;
 use Carbon\Carbon;
 use Str;
 use Yajra\DataTables\DataTables;
-use WordTemplate;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 
 class PengajuanController extends Controller
 {
@@ -47,8 +48,7 @@ class PengajuanController extends Controller
             DB::beginTransaction();
 
             MsPengajuan::create([
-                'no_pendaftaran' => Carbon::now()->format('d/m/Y').'/'.generate_invoice(10),
-                'name'          => $request->name,
+                'no_pendaftaran' => "CT" . generate_invoice(10),
                 'no_ktp'        => $request->no_ktp,
                 'image_ktp'     => $request->file('image_ktp')->store(
                     'assets/ktp',
@@ -185,18 +185,17 @@ class PengajuanController extends Controller
 
     public function exportWord(Request $request, $token)
     {
-        $file = public_path('/files/output.rtf');
         $data = MsPengajuan::where('token', $token)->first();
-        // $data['name'] = Auth::guard('customer')->user()->name;
-        $array = array(
-            '[NO_AUTO]' =>  $data->no_pendaftaran,
-            '[TANGGAL_BULAN]' => $data->created_at->format('d/m/Y'),
-            '[NAME]' => 'David',
-            '[DATE]' => $data->created_at->format('d/m/Y')
-        );
+        $qrCode = QrCode::errorCorrection('H')->format('png')->merge('/public/images/logo1.png', .3)->size(200)->generate(url('/status/' . $data->token), public_path('files/qrcode.png'));
+        $imageOption = ['path' => public_path('files/qrcode.png'), 'width' => 100, 'height' => 100, 'ratio' => false];
+        $template = new \PhpOffice\PhpWord\TemplateProcessor(\public_path('files/output.docx'));
+        $template->setValue('name', auth('customer')->user()->name);
+        $template->setValue('no_auto', $data->no_pendaftaran);
+        $template->setValue('tanggal_bulan', $data->created_at->format('d/m/Y'));
+        $template->setValue('date', $data->created_at->format('d/m/Y'));
+        $template->setImageValue('imageqr', $imageOption);
+        $template->saveAs(public_path("files/surat_pengajuan-$data->no_pendaftaran.docx"));
 
-        $nama_file = 'surat-kerjasama.doc';
-
-        return WordTemplate::export($file, $array, $nama_file);
+        return response()->download(public_path("files/surat_pengajuan-$data->no_pendaftaran.docx"));
     }
 }

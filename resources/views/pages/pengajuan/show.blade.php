@@ -99,7 +99,7 @@
                 </div>
                 <div class="card-footer">
                     <a href="{{ route('pengajuan.export', $item->token) }}" class="btn btn-success btn-sm text-light">
-                        <i class="icon-download4"> Download File</i>
+                        <i class="icon-download4"></i> Download File
                     </a>
                 </div>
             </div>

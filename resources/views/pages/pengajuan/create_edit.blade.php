@@ -25,86 +25,57 @@
                 <div class="card-header header-elements-inline">
                     <h5 class="card-title">{{isset($data) ? 'Edit Pengajuan' : 'Tambah Pengajuan'}}</h5>
                 </div>
-                <div class="card-header bg-white header-elements-inline">
-                    <h6 class="card-title">Surat Perjanjian Kerjasama</h6>
-                    <div class="header-elements">
-                        <div class="list-icons">
-                            <a class="list-icons-item" data-action="collapse"></a>
-                            <a class="list-icons-item" data-action="reload"></a>
-                            <a class="list-icons-item" data-action="remove"></a>
-                        </div>
-                    </div>
-                </div>
 
-                <div>
-                    <form class="wizard-form steps-basic wizard clearfix" action="#" data-fouc="" role="application"
-                        id="steps-uid-0">
-                        <div class="steps clearfix">
-                            <ul role="tablist">
-                                <li role="tab" class="first done" aria-disabled="false" aria-selected="false"><a
-                                        id="first" href="#first" aria-controls="first" class=""><span
-                                            class="number">1</span>Page 1</a></li>
-                                <li role="tab" class="current" aria-disabled="false" aria-selected="false"><a
-                                        id="second" href="#second" aria-controls="second" class=""><span
-                                            class="number">2</span> Page 2</a></li>
-                                <li role="tab" class="current" aria-disabled="false" aria-selected="false"><a id="third"
-                                        href="#third" aria-controls="third" class=""><span class="number">3</span>Page
-                                        3</a></li>
-                            </ul>
-                        </div>
-                        <div class="content clearfix">
-                            <fieldset id="first" role="tabpanel" aria-labelledby="first" class="body current"
-                                aria-hidden="false" style="">
-                                <p class="text-center">
-                                    SURAT PERJANJIAN KERJASAMA KANTOR LAYANAN PELANGGAN
-                                    <br>PT IKHLAS CIPTA TEKNOLOGI<br>
-                                    INTERNET SERVICE PROVIDER<br>
-                                    DENGAN<br>
-                                    <br>(No .001/PKS.ICT/X1/2020)<br>
-                                </p>
-                                <p>
-                                    Pada hari ini [HARI] tanggal [TANGGAL] bulan [BULAN] tahun [TAHUN] bertempat di
-                                    [TEMPAT]
-                                    <br>Yang bertanda tangan dibawah ini :
-                                    <br>&nbsp; Nama &nbsp; : [NAMA]
-                                    <br>&nbsp; No KTP : [NO_KTP]
-                                    <br>&nbsp; Alamat : [ALAMAT]
-                                    <br>&nbsp; Jabatan : [JABATAN]
-                                    <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN]<br>
-                                    <br>Dalam hal ini bertindak untuk dan atas nama PT Ikhlas Cipta Teknologi ISP,
-                                    berkedudukan
-                                    di Jakarta selanjutnya di
-                                    sebutkan sebagai <strong>PIHAK PERTAMA</strong>
-                                    <br>&nbsp; Nama : [NAMA_SECONDARY]
-                                    <br>&nbsp; No KTP : [NO_KTP_2]
-                                    <br>&nbsp; Alamat : [ALAMAT_2]
-                                    <br>&nbsp; Jabatan : [JABATAN_2]
-                                    <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN_2]<br>
-                                    <br>Dalam hal ini bertindak untuk dan atas nama [NAMA], berkedudukan di
-                                    [TEMPAT]<br>
-                                    <br>Selanjutnya di sebutkan sebagai <strong>PIHAK KEDUA</strong><br>
-                                    <br>Bahwa PIHAK PERTAMA adalah suatu perusahaan swasta yang
-                                    bergerak dalam bidang usaha Jasa Internet Service Provider
-                                    dengan NIB 0220009452023 kode KBLI 61921 serta telah mendapatkan Surat
-                                    Keterangan
-                                    Laik
-                                    Operasi dengan Nomor :
-                                    545/TEL.02.02/2020 sehingga mempunya landasan untuk dapat menawarkan Jasa
-                                    tersebut
-                                    diatas dalam ruang lingkup Nasional.<br>
-                                    <br>Bahwa untuk dapat memasarkan Produk/Jasa layanan kedua belah pihak perlu
-                                    mengadakan
-                                    kerjasama promosi dan penjualan di
-                                    wilayah layanan [LAYANAN] yang di tuangkan kedalam suatu perjanjian kerjasama
-                                    layanan,
-                                    dengan syarat-syarat yang akan di
-                                    tuangkan pada masing masing pasal perjanjian kerjasama sebagai berikut :
-                                </p>
-                            </fieldset>
-
-                            <fieldset id="second" role="tabpanel" aria-labelledby="second" class="body current"
-                                aria-hidden="false" style="">
-                                <p class="text-center">
+                <div class="card-body">
+                    <form class="wizard-form steps-validation" action="#" id="form-pengajuan" data-fouc>
+						<h6>Information</h6>
+						<fieldset>
+						 <p class="text-center">
+                  SURAT PERJANJIAN KERJASAMA KANTOR LAYANAN PELANGGAN
+                  <br>PT IKHLAS CIPTA TEKNOLOGI<br>
+                  INTERNET SERVICE PROVIDER<br>
+                  DENGAN<br>
+                  <br>(No .001/PKS.ICT/X1/2020)<br>
+              </p>
+              <p>
+                        Pada hari ini [HARI] tanggal [TANGGAL] bulan [BULAN] tahun [TAHUN] bertempat di
+                        [TEMPAT]
+                        <br>Yang bertanda tangan dibawah ini :
+                        <br>&nbsp; Nama &nbsp; : [NAMA]
+                        <br>&nbsp; No KTP : [NO_KTP]
+                        <br>&nbsp; Alamat : [ALAMAT]
+                        <br>&nbsp; Jabatan : [JABATAN]
+                        <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN]<br>
+                        <br>Dalam hal ini bertindak untuk dan atas nama PT Ikhlas Cipta Teknologi ISP,
+                        berkedudukan
+                        di Jakarta selanjutnya di
+                        sebutkan sebagai <strong>PIHAK PERTAMA</strong>
+                        <br>&nbsp; Nama : [NAMA_SECONDARY]
+                        <br>&nbsp; No KTP : [NO_KTP_2]
+                        <br>&nbsp; Alamat : [ALAMAT_2]
+                        <br>&nbsp; Jabatan : [JABATAN_2]
+                        <br>&nbsp; Kewarganegaraan : [KEWARGANEGARAAN_2]<br>
+                        <br>Dalam hal ini bertindak untuk dan atas nama [NAMA], berkedudukan di
+                        [TEMPAT]<br>
+                        <br>Selanjutnya di sebutkan sebagai <strong>PIHAK KEDUA</strong><br>
+                        <br>Bahwa PIHAK PERTAMA adalah suatu perusahaan swasta yang
+                        bergerak dalam bidang usaha Jasa Internet Service Provider
+                        dengan NIB 0220009452023 kode KBLI 61921 serta telah mendapatkan Surat
+                        Keterangan
+                        Laik
+                        Operasi dengan Nomor :
+                        545/TEL.02.02/2020 sehingga mempunya landasan untuk dapat menawarkan Jasa
+                        tersebut
+                        diatas dalam ruang lingkup Nasional.<br>
+                        <br>Bahwa untuk dapat memasarkan Produk/Jasa layanan kedua belah pihak perlu
+                        mengadakan
+                        kerjasama promosi dan penjualan di
+                        wilayah layanan [LAYANAN] yang di tuangkan kedalam suatu perjanjian kerjasama
+                        layanan,
+                        dengan syarat-syarat yang akan di
+                        tuangkan pada masing masing pasal perjanjian kerjasama sebagai berikut :
+                    </p>
+                      <p class="text-center">
                                     <strong>PASAL I</strong><br>
                                     <strong>DEFINSI</strong>
                                 </p>
@@ -161,10 +132,7 @@
                                     berhak menentukan standar harga jual sendiri tanpa harus memperoleh izin dari Pihak
                                     Pertama<br>
                                 </p>
-                            </fieldset>
-                            <fieldset id="third" role="tabpanel" aria-labelledby="third" class="body current"
-                                aria-hidden="false" style="">
-                                <p>
+                                 <p>
                                     2. Pihak Kedua di perbolehkan melakukan kerjasama dengan pihak lain namun harus
                                     dengan sepengetahuan dan telah memperoleh
                                     izin dari Pihak Pertama<br>
@@ -218,25 +186,10 @@
                                     Pertama akan memutuskan koneksi Internet
                                     pada Pihak Kedua dan atau Pembatalan Perjanjian Kerjasama ini.<br>
                                 </p>
-                            </fieldset>
-                        </div>
-
-
-                        <div class="actions clearfix">
-                            <ul role="menu" aria-label="Pagination">
-                                <li class="" aria-disabled="false"><a href="#previous" class="btn btn-light"
-                                        role="menuitem"><i class="icon-arrow-left13 mr-2"></i> Previous</a></li>
-                                <li aria-hidden="false" aria-disabled="false" class="" style=""><a href="#next"
-                                        class="btn btn-primary" role="menuitem">Next <i
-                                            class="icon-arrow-right14 ml-2"></i></a></li>
-                                <li aria-hidden="true" style="display: none;"><a href="#finish" class="btn btn-primary"
-                                        role="menuitem">Submit form <i class="icon-arrow-right14 ml-2"></i></a></li>
-                            </ul>
-                        </div>
-                    </form>
-
-                    <div class="card-body">
-                        <form id="form-pengajuan" enctype="multipart/form-data">
+            </fieldset>
+						<h6>Personal data</h6>
+						<fieldset>
+                
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="">Nama</label>
@@ -277,14 +230,8 @@
                                 <label for="">Tipe Pengajuan</label>
                                 {!! Form::select('type', $options['layanan'], null, ['class' => 'form-control']) !!}
                             </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="text-right">
-                        <button type="button" id="save" class="btn btn-md btn-primary pull-right">Submit</button>
-                        <a href="{{route('pengajuan.index')}}" class="btn btn-md btn-danger">Back</a>
-                    </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
@@ -292,6 +239,7 @@
 </div>
 @endsection
 @push('javascript')
+<script src="/global_assets/js/plugins/forms/wizards/steps.min.js"></script>
 <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 @if(isset($data))
 {!! JsValidator::formRequest('App\Http\Requests\Pengajuan\PengajuanUpdateRequest') !!}
@@ -299,18 +247,29 @@
 {!! JsValidator::formRequest('App\Http\Requests\Pengajuan\PengajuanRequest') !!}
 @endif
 <script>
-    $('#save').on("click", function () {
-        let btn = $(this);
-        let form = $('#form-pengajuan');
-        let url = "{{ route('pengajuan.store') }}"
-        let data = document.forms.namedItem('form-pengajuan');
-        let formData = new FormData(data);
-        let index = "{{ route('pengajuan.index') }}"
-        let mode = "POST"
-        if (form.valid()) {
-            createWithImage(url, formData, btn, index);
-        }
-    });
-
+ 
+    $('.steps-validation').steps({
+            headerTag: 'h6',
+            bodyTag: 'fieldset',
+            transitionEffect: 'fade',
+            titleTemplate: '<span class="number">#index#</span> #title#',
+            labels: {
+                previous: '<i class="icon-arrow-left13 mr-2" /> Previous',
+                next: 'Next <i class="icon-arrow-right14 ml-2" />',
+                finish: 'Submit form <i class="icon-arrow-right14 ml-2" />'
+            },
+            onFinished: function (event, currentIndex) {
+                let btn = $(this);
+                let form = $('#form-pengajuan');
+                let url = "{{ route('pengajuan.store') }}"
+                let data = document.forms.namedItem('form-pengajuan');
+                let formData = new FormData(data);
+                let index = "{{ route('pengajuan.index') }}"
+                let mode = "POST"
+                if (form.valid()) {
+                    createWithImage(url, formData, btn, index);
+                }
+            }
+        });
 </script>
 @endpush
