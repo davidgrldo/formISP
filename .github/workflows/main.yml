@@ -27,5 +27,6 @@ jobs:
           script: |
             cd /var/www/isp
             git pull origin master
+            php artisan migrate
             php artisan config:clear
             systemctl restart nginx

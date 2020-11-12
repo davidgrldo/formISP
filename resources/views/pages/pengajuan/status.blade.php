@@ -64,7 +64,7 @@
 
                         <ul class="list list-unstyled mb-0 text-right">
                             <li>
-                                <h5 class="font-weight-semibold my-2">{{ $item->name }}</h5>
+                                <h5 class="font-weight-semibold my-2">{{ $item->customer->name }}</h5>
                             </li>
                             <li>
                                 <a href="{{ url('/storage/'.$item->image_ktp) }}"
