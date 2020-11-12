@@ -10,7 +10,7 @@
 
     <div class="navbar-collapse collapse" id="navbar-footer">
         <span class="navbar-text">
-            &copy; 2020. </a> by <a href="https://digitaltech.id/" target="_blank">Digital Tech Indonesia</a>
+            &copy; 2020. </a> PT Ikhlas Cipta Teknologi. Powered by <a href="https://digitaltech.id/" target="_blank">Digital Tech Indonesia</a>
         </span>
 
     </div>
