@@ -10,7 +10,7 @@ class StatusController extends Controller
 {
     public function index(Request $request, $token)
     {
-        $item = MsPengajuan::where('token', $token)->first();
+        $item = MsPengajuan::with('customer')->where('token', $token)->first();
         return view('pages.pengajuan.status', compact('item'));
     }
 }

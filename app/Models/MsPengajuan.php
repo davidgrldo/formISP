@@ -8,8 +8,8 @@ class MsPengajuan extends Model
 {
     protected $guarded = [];
 
-    // public function getPhotoAttribute($value)
-    // {
-    //     return url('storage/' . $value);
-    // }
+    public function customer()
+    {
+        return $this->belongsTo(MsCustomer::class, 'customer_id');
+    }
 }

@@ -49,6 +49,7 @@ class PengajuanController extends Controller
 
             MsPengajuan::create([
                 'no_pendaftaran' => "CT" . generate_invoice(10),
+                'customer_id'   => auth('customer')->user()->id,
                 'no_ktp'        => $request->no_ktp,
                 'image_ktp'     => $request->file('image_ktp')->store(
                     'assets/ktp',
@@ -81,7 +82,7 @@ class PengajuanController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $item = MsPengajuan::find($id);
+        $item = MsPengajuan::with('customer')->find($id);
         return view('pages.pengajuan.show', compact('item'));
     }
 
@@ -158,7 +159,7 @@ class PengajuanController extends Controller
      * */
     public function data(Request $request)
     {
-        $data = MsPengajuan::all();
+        $data = MsPengajuan::where('customer_id', auth('customer')->user()->id);
 
         return DataTables::of($data)
             ->addIndexColumn()
