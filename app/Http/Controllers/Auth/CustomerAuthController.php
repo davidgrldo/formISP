@@ -37,7 +37,7 @@ class CustomerAuthController extends Controller
             'company_name' => $data['company_name'],
             'password' => Hash::make($data['password']),
         ]);
-        return redirect('/pages/login');
+        return redirect('/pages/login')->with(['success' => 'Success']);
     }
 
 

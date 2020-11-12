@@ -9,6 +9,9 @@
         @if(\Session::has('error'))
         <div class="alert alert-danger">Email atau password salah</div>
         @endif
+        @if(\Session::has('success'))
+        <div class="alert alert-success">Register berhasil.</div>
+        @endif
         <div class="card mb-0">
             <div class="card-body">
                 <div class="text-center mb-3">
