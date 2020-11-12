@@ -6,7 +6,7 @@ name: CD
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,13 +20,12 @@ jobs:
       - name: deploy to server
         uses: appleboy/ssh-action@master
         with:
-          host: digitaltech.id
-          username: root
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
-          port: 2232
+          port: ${{ secrets.PORT }}
           script: |
-            cd /var/www/formISP
+            cd /var/www/isp
             git pull origin master
-            git status
             php artisan config:clear
             systemctl restart nginx

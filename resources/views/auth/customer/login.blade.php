@@ -49,8 +49,9 @@
                         <i class="icon-circle-right2 ml-2"></i>
                     </button>
                 </div>
-                <div class="text-center">
-                    <a href="{{ url('/pages/register') }}">Create Account</a>
+                <div class="d-flex justify-content-between">
+                    <label for="">Belum memiliki akun?</label>
+                    <a href="{{ url('/pages/register') }}">Register</a>
                 </div>
             </div>
         </div>
