@@ -39,13 +39,25 @@
                         <li class="nav-item"><a href="{{ route('user.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'user' ? 'active' : '' }}">User</a>
                         </li>
-                        <li class="nav-item"><a href="{{ route('customer.index') }}"
-                                class="nav-link {{ request()->segment(2) == 'customer' ? 'active' : '' }}">Customer</a>
-                        </li>
-                        <li class="nav-item"><a href="{{ route('request.index') }}"
-                                class="nav-link {{ request()->segment(2) == 'pengajuan' ? 'active' : '' }}">Request</a>
-                        </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('customer.index') }}"
+                        class="nav-link {{ request()->segment(2) == 'customer' ? 'active' : '' }}">
+                        <i class="icon-user"></i>
+                        <span>
+                            Customer
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('request.index') }}"
+                        class="nav-link {{ request()->segment(2) == 'pengajuan' ? 'active' : '' }}">
+                        <i class="icon-profile"></i>
+                        <span>
+                            Pengajuan
+                        </span>
+                    </a>
                 </li>
                 @else
                 <li class="nav-item">
