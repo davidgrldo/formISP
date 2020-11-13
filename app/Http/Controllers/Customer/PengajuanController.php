@@ -11,6 +11,9 @@ use Carbon\Carbon;
 use Str;
 use Yajra\DataTables\DataTables;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use PDF;
+use App;
+use Barryvdh\Snappy;
 
 
 class PengajuanController extends Controller
@@ -198,5 +201,14 @@ class PengajuanController extends Controller
         $template->saveAs(public_path("files/surat_pengajuan-$data->no_pendaftaran.docx"));
 
         return response()->download(public_path("files/surat_pengajuan-$data->no_pendaftaran.docx"));
+    }
+
+    public function exportPdf($token)
+    {
+        $data = MsPengajuan::where('token', $token)->first();
+        $pdf = App::make('snappy.pdf.wrapper');
+        $pdf->loadView('pages.pengajuan.export', compact('data'));
+        $pdf->setPaper('a4')->setOption('margin-top', 0)->setOption('margin-bottom', 0);
+        return $pdf->inline();
     }
 }
