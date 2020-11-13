@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="keywords" content="e-liscense, imedianet.id">
+    <meta property="og:site_name" content="e-license.imedianet.id">
+    <meta name="description" content="Digitaltech.id adalah Sebuah digital agency yang menyediakan berbagai macam layanan terintegrasi berfokus pada pembuatan website, mobile apps, dan layanan digital.">
     <title>@yield('title') &dash; CMS</title>
 
     <!-- Global stylesheets -->
