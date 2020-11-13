@@ -17,8 +17,7 @@
 <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 @endslot
 @slot('breadcumbs2')
-<a href="{{url('/pages/dashboard')}}" class="breadcrumb-item">Home</a>
-<a href="{{route('pengajuan.index')}}" class="breadcrumb-item">Pages</a>
+<a href="{{url('/backend/dashboard')}}" class="breadcrumb-item">Home</a>
 <span class="breadcrumb-item active">Pengajuan</span>
 @endslot
 @endcomponent

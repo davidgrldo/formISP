@@ -10,8 +10,8 @@
 <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> / Pengajuan / Set Status</h4>
 @endslot
 @slot('breadcumbs2')
-<a href="{{url('/pages/dashboard')}}" class="breadcrumb-item"> Home</a>
-<a href="{{route('pengajuan.index')}}" class="breadcrumb-item">Pengajuan</a>
+<a href="{{url('/backend/dashboard')}}" class="breadcrumb-item"> Home</a>
+<a href="{{route('request.index')}}" class="breadcrumb-item">Pengajuan</a>
 <span class="breadcrumb-item active">Set Status</span>
 @endslot
 @endcomponent
@@ -95,8 +95,8 @@
                     </div>
                     <div class="text-right mt-2">
                         @if($item->status != 'Disetujui' && $item->status != 'Tidak Disetujui')
-                        <button type="button" class="btn btn-md btn-primary pull-right setuju"
-                            data-value="setuju" data-id="{{$item->id}}">Setuju</button>
+                        <button type="button" class="btn btn-md btn-primary pull-right setuju" data-value="setuju"
+                            data-id="{{$item->id}}">Setuju</button>
                         <button type="button" class="btn btn-md btn-danger pull-right tidak_setuju"
                             data-value="tidak_setuju" data-id="{{$item->id}}">Tidak
                             Setuju</button>
